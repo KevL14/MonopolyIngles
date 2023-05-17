@@ -2,7 +2,8 @@ var cantidadJugadores,turnoJugador = 1;
 var cantidadJugadores = 2;
 var positionPlayers ={
     player1: 0,
-    player2:0
+    player2:0,
+    player3
 }
 
 function turnos(numAzar){
