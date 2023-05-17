@@ -1,0 +1,53 @@
+/* estilos de tabla de juegos */
+#tableGame {
+    margin-top: 1pc;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #tableGame td {
+    border: 1px solid #000;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    min-height: 100px;
+
+  }
+  #tableGame  .corner {
+    /* background-color: #fddf36; */
+    width: 200px;
+    height: 100px;
+  }
+
+  #tableGame td #position0{
+    background-image: url(../img/go.jpeg);
+  }
+  /* posicion de fichas en casillas */
+  #tableGame td .iconsPlayers{
+    width: 50px;
+    position: absolute;
+  }
+  #tableGame td #iconPlayer1{
+    top: 30px;
+    left: 15px;
+   
+  }
+  #tableGame td #iconPlayer2{
+    top: 30px;
+    right: 15px;
+  }
+
+
+
+
+  #tableGame .espaciosVacios{
+      border:none
+  }
+  
+  #tableGame .property {
+    background-color: #ff7948;
+    color: #fff;
+  }
+  
