@@ -7,109 +7,182 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Tabla del Monopoly</title>
+    
 </head>
 <body>    
-  <table  id="tableGame">
-    <tr>
-      <td class="corner" id="position0"></td>
-      <td class="property" id="position1">1</td>
-      <td class="property" id="position2">2</td>
-      <td class="property" id="position3">3</td>
-      <td class="property" id="position4">4</td>
-      <td class="property" id="position5">5</td>
-      <td class="property" id="position6">6</td>
-      <td class="property" id="position7">7</td>
-      <td class="property" id="position8">8</td>
-      <td class="property" id="position9">9</td>
-      <td class="property" id="position10">10</td>
-      <td class="corner" id="position11">11</td>
-
-      <!-- filas verticales -->
-    </tr>
-    <tr>
-        <!-- primero izq y luego der -->
-      <td class="property" id="position31">31</td>
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-
-      <td class="property" id="position12">12</td>
-    </tr>
-    <tr>
-      <td class="property" id="position30">32</td>
-
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"><button onclick="lanzarDado()">Lanzar dado</button></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="property" id="position13">13</td>
-    </tr>
-
-    <tr>
-      <td class="property" id="position29">29</td>
-
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="property" id="position14">14</td>
-    </tr>
+  <section class ="paginas mostrar" id="block1">
+    <div>
+      <h1>Name tableGame</h1>
 
 
-    <tr>
-      <td class="property" id="position28">20</td>
+      <h2>Elegir cantidad de jugadores que desea jugadores</h2>
+      <div id="contenedorNumParticipantes">
+        <button class="btn_CantJugadores" id="seleccionCantJugadores1" onclick="cantidadJugadoresPartida(1)">1</button>
+        <button class="btn_CantJugadores" id="seleccionCantJugadores2" onclick="cantidadJugadoresPartida(2)">2</button>
+        <button class="btn_CantJugadores" id="seleccionCantJugadores3" onclick="cantidadJugadoresPartida(3)">3</button>
+        <button class="btn_CantJugadores" id="seleccionCantJugadores4" onclick="cantidadJugadoresPartida(4)">4</button>
+      </div>
+      <div id="contenedorPerfilesParticipantes">
+        <!-- perfil jugador 1 -->
+        <span class="contenedorInfoPlayers ocultar">
 
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="espaciosVacios"></td><!-- Celda vacía -->
-      <td class="property" id="position15">15</td>
-    </tr>
-    <!-- ... Resto de las filas de la tabla ... -->
-    <tr>
-        <td class="corner" id="position27">27</td>
-        <td class="property" id="position26">26</td>
-        <td class="property" id="position25">25</td>
-        <td class="property" id="position24">24</td>
-        <td class="property" id="position23">23</td>
-        <td class="property" id="position22">22</td>
-        <td class="property" id="position21">21</td>
-        <td class="property" id="position20">20</td>
-        <td class="property" id="position19">19</td>
-        <td class="property" id="position18">18</td>
-        <td class="property" id="position17">17</td>
-        <td class="corner" id="position16">16</td>
-  
-    </tr>
-  </table>
-  <button onclick="lanzarDado()">Lanzar dado</button>
+          <span id="imgAvatarSeleccionado1" ></span>
+          <select name="" id="seleccionAvatar1" onchange="seleccionAvatar(this.value,1)">
+            <option value="0">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <input type="text" name="" id="" placeHolder="nameTeam">
+        </span>
+
+        <span class="contenedorInfoPlayers ocultar">
+
+          <span id="imgAvatarSeleccionado2"></span>
+          <select name="" id="seleccionAvatar2" onchange="seleccionAvatar(this.value,2)">
+            <option value="0" selection>Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <input type="text" name="" id="" placeHolder="nameTeam">
+        </span>
+
+        <span class="contenedorInfoPlayers ocultar">
+
+          <span id="imgAvatarSeleccionado3"></span>
+          <select name="" id="seleccionAvatar3" onchange="seleccionAvatar(this.value,3)">
+            <option value="0" selection>Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <input type="text" name="" id="" placeHolder="nameTeam">
+        </span>
+
+        <span class="contenedorInfoPlayers ocultar">
+          <span id="imgAvatarSeleccionado4"></span>
+          <select name="" id="seleccionAvatar4" onchange="seleccionAvatar(this.value,4)">
+            <option value="0" selection>Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <input type="text" name="" id="" placeHolder="nameTeam">
+        </span>
+      </div>
+
+
+      <button onclick="mostrarPaginas(2)">Iniciar Partida</button>
+  </div>
+  </section>
+  <section class="paginas ocultar" id="block2">
+    <table  id="tableGame">
+      <tr>
+        <td class="corner" id="position0"></td>
+        <td class="property" id="position1">1</td>
+        <td class="property" id="position2">2</td>
+        <td class="property" id="position3">3</td>
+        <td class="property" id="position4">4</td>
+        <td class="property" id="position5">5</td>
+        <td class="property" id="position6">6</td>
+        <td class="property" id="position7">7</td>
+        <td class="property" id="position8">8</td>
+        <td class="property" id="position9">9</td>
+        <td class="property" id="position10">10</td>
+        <td class="corner" id="position11">11</td>
+
+        <!-- filas verticales -->
+      </tr>
+      <tr>
+          <!-- primero izq y luego der -->
+        <td class="property" id="position31">31</td>
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+
+        <td class="property" id="position12">12</td>
+      </tr>
+      <tr>
+        <td class="property" id="position30">32</td>
+
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"><button onclick="lanzarDado()">Lanzar dado</button></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="property" id="position13">13</td>
+      </tr>
+
+      <tr>
+        <td class="property" id="position29">29</td>
+
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="property" id="position14">14</td>
+      </tr>
+
+
+      <tr>
+        <td class="property" id="position28">20</td>
+
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="property" id="position15">15</td>
+      </tr>
+      <!-- ... Resto de las filas de la tabla ... -->
+      <tr>
+          <td class="corner" id="position27">27</td>
+          <td class="property" id="position26">26</td>
+          <td class="property" id="position25">25</td>
+          <td class="property" id="position24">24</td>
+          <td class="property" id="position23">23</td>
+          <td class="property" id="position22">22</td>
+          <td class="property" id="position21">21</td>
+          <td class="property" id="position20">20</td>
+          <td class="property" id="position19">19</td>
+          <td class="property" id="position18">18</td>
+          <td class="property" id="position17">17</td>
+          <td class="corner" id="position16">16</td>
+    
+      </tr>
+    </table>
+</section>
   <script src="js/logicaTurnosJugadores.js"></script>
   <script src="js/movimientosPersonajes.js"></script>
-
+  <script src="js/pasarPaginas.js"></script>
+  <script src="js/pantallaPrincipalConfig.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
-var cantidadJugadores,turnoJugador = 1;
-var cantidadJugadores = 2;
+var turnoJugador = 1;
+// cantidad jugadores en documento pantallaPrincipalConfing.js 
 var positionPlayers ={
     player1: 0,
     player2:0,
-    player3
+    player3:0,
+    player4:0
 }
 
 function turnos(numAzar){
@@ -19,6 +20,18 @@ function turnos(numAzar){
             positionPlayers.player2 = positionPlayers.player2 + numAzar;
             if (positionPlayers.player2 > 31){
                 positionPlayers.player2 = 0;
+            }
+            break;
+        case 3:
+            positionPlayers.player3 = positionPlayers.player3 + numAzar;
+            if (positionPlayers.player3 > 31){
+                positionPlayers.player3 = 0;
+            }
+            break;
+        case 4:
+            positionPlayers.player4 = positionPlayers.player4 + numAzar;
+            if (positionPlayers.player4 > 31){
+                positionPlayers.player4 = 0;
             }
             break;
     }

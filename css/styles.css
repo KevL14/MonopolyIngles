@@ -1,3 +1,54 @@
+/* funciones mostrar y ocultar paginas */
+.mostrar{
+  display: block;
+}
+.ocultar{
+  display: none;
+}
+/* estilos universales */
+body{
+  height: 100%;
+}
+/* estilo pantalla principal */
+#block1{
+  background-color: rgb(199, 199, 255);
+  padding: 5%;
+  height: 100%;
+}
+ 
+#block1 div:first-child{
+  background-color: rgb(255, 255, 255) ;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 11px;
+  text-align: center;
+  padding: 2%;
+  width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+}
+ /* seleccion de cantidad jugadores  */
+
+
+    /* presentacion de avatares disponibles  */
+  #block1 div:first-child #contenedorPerfilesParticipantes{
+    display: flex;
+    margin: 10px 0 30px 0;
+    justify-content: space-between;
+  }
+  #block1 div:first-child #contenedorPerfilesParticipantes span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aqua;
+    width: 200px;
+    height: 150px;
+  }
+  #block1 div:first-child #contenedorPerfilesParticipantes span img{
+    width: 100px;
+  }
+
 /* estilos de tabla de juegos */
 #tableGame {
     margin-top: 1pc;
