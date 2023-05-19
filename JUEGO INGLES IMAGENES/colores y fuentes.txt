@@ -1,0 +1,10 @@
+PAG JUGADORES
+Color formas: #d2fcff
+boton inicio y jugadores: #244c76
+fondo: #7eb1db
+
+PAG1
+fondo celeste oscuro: #7eb1db
+fondo celeste claro: dbeff4
+fuente titulo: Staatliches
+fuente subtitulo: DM SANS

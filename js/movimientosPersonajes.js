@@ -1,51 +1,14 @@
-var carasDado ={
-    cara1:'<img src="img/carasDado/cara1Fondo.png" alt="1"/>',
-    cara2:'<img src="img/carasDado/cara2Fondo.png" alt="2"/>',
-    cara3:'<img src="img/carasDado/cara3Fondo.png" alt="3"/>',
-    cara4:'<img src="img/carasDado/cara4Fondo.png" alt="4"/>',
-}
-var numeroDadoActual;
+
 var numeroJugadoresMismaPosicion=[];
 var jugadoresjuntosAnteriores="";
-function lanzarDado(){
 
-    var numeroDado = Math.floor(Math.random() * 1) + 1;
-    // modifico la posicion actual para actualizar el dado 
-    numeroDadoActual = numeroDado
-    // actualizo los turnos logicaTurnosJugadores.js 
-    turnos(numeroDado)
-
-}
 function actulizarPosiciones(){
     
     var imprimirJugadoresJuntos = "";
     
     // limpio el tablero volviendolo a mostrar 
-    document.getElementById("block2").innerHTML=  tablaDeJuego;
-  
-
-    // busco donde se imprime el dado 
-    var btnDado = document.getElementById("dado");
-    var imgDado ;
-    // actualizo el numero del dado 
-    switch (numeroDadoActual) {
-        case 1:
-            imgDado = carasDado.cara1;
-            break;
-
-        case 2:
-            imgDado = carasDado.cara2;
-            break;
-
-        case 3:
-            imgDado = carasDado.cara3;
-            break;
-
-        case 4:
-            imgDado = carasDado.cara4;
-            break;
-    }
-    btnDado.innerHTML = imgDado;
+    document.getElementById("block2").innerHTML =  tablaDeJuego;
+    actualizarImgDado()
 
     // muestro las nuevas posiciones en sus casillas
     
@@ -67,6 +30,18 @@ function actulizarPosiciones(){
             case 4:
                 document.getElementById(`position`+positionPlayers.player4).innerHTML=avataresSeleccionados.player4;
             break;
+            // case 5:
+            //     document.getElementById(`position`+positionPlayers.player5).innerHTML=avataresSeleccionados.player5;
+            // break;
+            // case 6:
+            //     document.getElementById(`position`+positionPlayers.player6).innerHTML=avataresSeleccionados.player6;
+            // break;
+            // case 7:
+            //     document.getElementById(`position`+positionPlayers.player7).innerHTML=avataresSeleccionados.player7;
+            //     break;
+            //     case 8:
+            //         document.getElementById(`position`+positionPlayers.player8).innerHTML=avataresSeleccionados.player8;
+            //         break;
         }
 
     }
@@ -102,6 +77,22 @@ function actulizarPosiciones(){
                 imprimirJugadoresJuntos =imprimirJugadoresJuntos + avataresSeleccionados.player4;
                 document.getElementById(`position`+positionPlayers.player4).innerHTML=imprimirJugadoresJuntos
                 break;
+                case "player5":
+                    imprimirJugadoresJuntos =imprimirJugadoresJuntos + avataresSeleccionados.player5;
+                    document.getElementById(`position`+positionPlayers.player5).innerHTML=imprimirJugadoresJuntos
+                    break;
+                    case "player6":
+                        imprimirJugadoresJuntos =imprimirJugadoresJuntos + avataresSeleccionados.player6;
+                        document.getElementById(`position`+positionPlayers.player6).innerHTML=imprimirJugadoresJuntos
+                        break;
+                        case "player7":
+                            imprimirJugadoresJuntos =imprimirJugadoresJuntos + avataresSeleccionados.player7;
+                            document.getElementById(`position`+positionPlayers.player7).innerHTML=imprimirJugadoresJuntos
+                            break;
+                            case "player8":
+                                imprimirJugadoresJuntos =imprimirJugadoresJuntos + avataresSeleccionados.player8;
+                                document.getElementById(`position`+positionPlayers.player8).innerHTML=imprimirJugadoresJuntos
+                                break;
             default:
                 break;
         }
@@ -112,44 +103,63 @@ function actulizarPosiciones(){
 
 
         // averiguo si en las jugadas hechas antes de la mas reciente existe una lista con elementos 
-        var elementosPenultimaJugada
-         elementosPenultimaJugada = numeroJugadoresMismaPosicion[numCombinacionesPosibles-1]
-        if (elementosPenultimaJugada[0].length> 0){
-            // busco el indice de la jugada anterior de la mas nueva (antepenultima) y veo cuantos elementos tiene
-            var indexJugadoresAnterioresJuntos=numeroJugadoresMismaPosicion[numCombinacionesPosibles-1].length
-            // pregunto si tiene al menos 1 elemento 
-            if (indexJugadoresAnterioresJuntos>0) {
-            // tomo la lista de la antepenultima jugada
-            var posicionRetomar =   numeroJugadoresMismaPosicion[numCombinacionesPosibles-1]
-                
-            // y la imprimo 
-            for (let index = 0; index < posicionRetomar.length; index++) {
-                switch (posicionRetomar[index]) {
-                    // agarra el primer valor de la lista y ve que jugador es y lo suma al html
-                    case "player1":
-                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player1
-                        document.getElementById(`position`+positionPlayers.player1).innerHTML=jugadoresjuntosAnteriores
-                        break;
-                    case "player2":
-                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player2
-                        document.getElementById(`position`+positionPlayers.player2).innerHTML=jugadoresjuntosAnteriores
-                        break;
-                    case "player3":
-                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player3
-                        document.getElementById(`position`+positionPlayers.player3).innerHTML=jugadoresjuntosAnteriores
-                        break;
-                    case "player4":
-                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player4
-                        document.getElementById(`position`+positionPlayers.player4).innerHTML=jugadoresjuntosAnteriores
-                        break;
-                    default:
-                        break;
-                }
-            }
-            
+        if (cantidadJugadores == 4) {
+            var elementosPenultimaJugada = [];
+            elementosPenultimaJugada = numeroJugadoresMismaPosicion[numCombinacionesPosibles-1]
+            // voy verificando que nada este vacio
+           if (elementosPenultimaJugada != []){
+               // busco el indice de la jugada anterior de la mas nueva (antepenultima) y veo cuantos elementos tiene
+               var indexJugadoresAnterioresJuntos=numeroJugadoresMismaPosicion[numCombinacionesPosibles-1]
+               // pregunto si tiene al menos 1 elemento 
+               if (indexJugadoresAnterioresJuntos!=[]) {
+               // tomo la lista de la antepenultima jugada
+               var posicionRetomar =   numeroJugadoresMismaPosicion[numCombinacionesPosibles-1]
+                   
+               // y la imprimo 
+               if (posicionRetomar != undefined){
+                for (let index = 0; index < 2; index++) {
+                    switch (posicionRetomar[index]) {
+                        // agarra el primer valor de la lista y ve que jugador es y lo suma al html
+                        case "player1":
+                            jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player1
+                            document.getElementById(`position`+positionPlayers.player1).innerHTML=jugadoresjuntosAnteriores
+                            break;
+                        case "player2":
+                            jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player2
+                            document.getElementById(`position`+positionPlayers.player2).innerHTML=jugadoresjuntosAnteriores
+                            break;
+                        case "player3":
+                            jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player3
+                            document.getElementById(`position`+positionPlayers.player3).innerHTML=jugadoresjuntosAnteriores
+                            break;
+                        case "player4":
+                            jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player4
+                            document.getElementById(`position`+positionPlayers.player4).innerHTML=jugadoresjuntosAnteriores
+                            break;
+                            case "player5":
+                                jugadoresjuntosAnteriores= jugadoresjuntosAnteriores+avataresSeleccionados.player5
+                                document.getElementById(`position`+positionPlayers.player5).innerHTML=jugadoresjuntosAnteriores
+                                break;
+                                case "player6":
+                                    jugadoresjuntosAnteriores= jugadoresjuntosAnteriores+avataresSeleccionados.player6
+                                    document.getElementById(`position`+positionPlayers.player6).innerHTML=jugadoresjuntosAnteriores
+                                break;
+                                case "player7":
+                                    jugadoresjuntosAnteriores= jugadoresjuntosAnteriores+avataresSeleccionados.player7
+                                    document.getElementById(`position`+positionPlayers.player7).innerHTML=jugadoresjuntosAnteriores
+                                    break;
+                                    case "player8":
+                                        jugadoresjuntosAnteriores= jugadoresjuntosAnteriores+avataresSeleccionados.player8
+                                        document.getElementById(`position`+positionPlayers.player8).innerHTML=jugadoresjuntosAnteriores
+                                        break;
+                        default:
+                            break;
+                     }
+               
+                   }
+               }
+           } 
         }
-      
-        
     }
     // luego repite el proceso pero con el otro jugador que salga que este en la misma pocicion y lo suma al mismo html 
     

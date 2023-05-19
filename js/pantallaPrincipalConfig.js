@@ -4,7 +4,13 @@ var avataresSeleccionados = {
     player2:"",
     player3:"",
     player4:"",
+    player5:"",
+    player6:"",
+    player7:"",
+    player8:"",
+    
 }
+
 // seccion 1 de eleccion de cantidad de jugadores 
 function cantidadJugadoresPartida(numJugadores){
 
@@ -38,14 +44,23 @@ function cantidadJugadoresPartida(numJugadores){
 }
 
 
+
+// inicializo por defecto los avatares 
+
+
+
 // seccion 2 seleccion de avatares y nombre equipo 
 function seleccionAvatar(numAvatar,idSelect){
     var imgAvatares = {
-        avatar1:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer1.png" alt="iconPlayer1">`,
-        avatar2:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer2.jpeg" alt="iconPlayer2">`,
-        avatar3:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer3.png" alt="iconPlayer3">`,
-        avatar4:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer4.png" alt="iconPlayer4">`
-    }
+        avatar1:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player1.png" alt="iconPlayer1">`,
+        avatar2:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player2.png" alt="iconPlayer2">`,
+        avatar3:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player3.png" alt="iconPlayer3">`,
+        avatar4:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player4.png" alt="iconPlayer4">`,
+        avatar5:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player5.png" alt="iconPlayer5">`,
+        avatar6:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player6.png" alt="iconPlayer6">`,
+        avatar7:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player7.png" alt="iconPlayer7">`,
+        avatar8:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player8.png" alt="iconPlayer8">`,
+      }
     // agarro el lugar donde imprimo la preimagen
     var imprimirAvatarElegido = document.getElementById(`imgAvatarSeleccionado${idSelect}`);
     // le imprimo segun la imagen seleccionada 
@@ -67,6 +82,23 @@ function seleccionAvatar(numAvatar,idSelect){
             imprimirAvatarElegido.innerHTML = imgAvatares.avatar4;
             imgAvatarseleccionado = imgAvatares.avatar4;
             break;
+            case "5":
+                imprimirAvatarElegido.innerHTML = imgAvatares.avatar5;
+                imgAvatarseleccionado = imgAvatares.avatar5;
+                break;
+                case "6":
+                    imprimirAvatarElegido.innerHTML = imgAvatares.avatar6;
+                    imgAvatarseleccionado = imgAvatares.avatar6;
+                    break;
+                    case "7":
+                        imprimirAvatarElegido.innerHTML = imgAvatares.avatar7;
+                        imgAvatarseleccionado = imgAvatares.avatar7;
+                        break;
+                        case "8":
+                            imprimirAvatarElegido.innerHTML = imgAvatares.avatar8;
+                            imgAvatarseleccionado = imgAvatares.avatar8;
+                            break;
+                        
         default:
             imprimirAvatarElegido.innerHTML="";
             break;
@@ -87,7 +119,21 @@ function seleccionAvatar(numAvatar,idSelect){
         case 4:
             avataresSeleccionados.player4 = imgAvatarseleccionado
             break;
+            case 5:
+                avataresSeleccionados.player5 = imgAvatarseleccionado
+                break;
+                case 6:
+                    avataresSeleccionados.player6 = imgAvatarseleccionado
+                    break;
+                    case 7:
+                        avataresSeleccionados.player7 = imgAvatarseleccionado
+                        break;
+                        case 8:
+                            avataresSeleccionados.player8 = imgAvatarseleccionado
+                            break;
+
         default:
             break;
     } 
+
 }
