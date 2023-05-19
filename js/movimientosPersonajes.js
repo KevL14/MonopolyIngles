@@ -6,9 +6,10 @@ var carasDado ={
 }
 var numeroDadoActual;
 var numeroJugadoresMismaPosicion=[];
+var jugadoresjuntosAnteriores="";
 function lanzarDado(){
 
-    var numeroDado = Math.floor(Math.random() * 4) + 1;
+    var numeroDado = Math.floor(Math.random() * 1) + 1;
     // modifico la posicion actual para actualizar el dado 
     numeroDadoActual = numeroDado
     // actualizo los turnos logicaTurnosJugadores.js 
@@ -18,8 +19,11 @@ function lanzarDado(){
 function actulizarPosiciones(){
     
     var imprimirJugadoresJuntos = "";
+    
     // limpio el tablero volviendolo a mostrar 
     document.getElementById("block2").innerHTML=  tablaDeJuego;
+  
+
     // busco donde se imprime el dado 
     var btnDado = document.getElementById("dado");
     var imgDado ;
@@ -72,6 +76,9 @@ function actulizarPosiciones(){
             // por errores la lista se acumulara con valores empty, solo pido que tan larga es y los valores
             // de posiciones iguales estaran en la ultima lista 
             var numCombinacionesPosibles =numeroJugadoresMismaPosicion.length-1
+            // guardo la combinacion posible anterior
+            
+
             // veo a ver si la lista de la ultima posicion tiene valores
     for (let i = 0; i < numeroJugadoresMismaPosicion[numCombinacionesPosibles].length; i++) {
 
@@ -98,9 +105,54 @@ function actulizarPosiciones(){
             default:
                 break;
         }
+    }
+    // en este switch voy a verificar si hay jugadores 2 en 2, la razon es debido que hasta aqui
+    //solo se imprime los ultimos grupos y no los anteriores y en ese caso solo se imprime 2 y 1
+    // estaria trabajando con la antepenultima jugada **** este error se presenta en 4 jugadores
+
+
+        // averiguo si en las jugadas hechas antes de la mas reciente existe una lista con elementos 
+        var elementosPenultimaJugada
+         elementosPenultimaJugada = numeroJugadoresMismaPosicion[numCombinacionesPosibles-1]
+        if (elementosPenultimaJugada[0].length> 0){
+            // busco el indice de la jugada anterior de la mas nueva (antepenultima) y veo cuantos elementos tiene
+            var indexJugadoresAnterioresJuntos=numeroJugadoresMismaPosicion[numCombinacionesPosibles-1].length
+            // pregunto si tiene al menos 1 elemento 
+            if (indexJugadoresAnterioresJuntos>0) {
+            // tomo la lista de la antepenultima jugada
+            var posicionRetomar =   numeroJugadoresMismaPosicion[numCombinacionesPosibles-1]
+                
+            // y la imprimo 
+            for (let index = 0; index < posicionRetomar.length; index++) {
+                switch (posicionRetomar[index]) {
+                    // agarra el primer valor de la lista y ve que jugador es y lo suma al html
+                    case "player1":
+                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player1
+                        document.getElementById(`position`+positionPlayers.player1).innerHTML=jugadoresjuntosAnteriores
+                        break;
+                    case "player2":
+                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player2
+                        document.getElementById(`position`+positionPlayers.player2).innerHTML=jugadoresjuntosAnteriores
+                        break;
+                    case "player3":
+                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player3
+                        document.getElementById(`position`+positionPlayers.player3).innerHTML=jugadoresjuntosAnteriores
+                        break;
+                    case "player4":
+                        jugadoresjuntosAnteriores = jugadoresjuntosAnteriores +avataresSeleccionados.player4
+                        document.getElementById(`position`+positionPlayers.player4).innerHTML=jugadoresjuntosAnteriores
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+        }
+      
         
     }
     // luego repite el proceso pero con el otro jugador que salga que este en la misma pocicion y lo suma al mismo html 
+    
 }
 
 
@@ -131,4 +183,7 @@ function obtenerClavesValoresIguales(objeto) {
   });
 
   return clavesValoresIguales;
+
+  
 }
+
