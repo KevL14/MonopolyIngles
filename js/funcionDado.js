@@ -13,7 +13,7 @@ var numeroDadoActual;
 // la funcion que genera los numeros del dado
 function lanzarDado(){
 
-    var numeroDado = Math.floor(Math.random() * 1) + 1;
+    var numeroDado = Math.floor(Math.random() * 6) + 1;
     // modifico la posicion actual para actualizar el dado 
     numeroDadoActual = numeroDado
     // actualizo los turnos logicaTurnosJugadores.js 

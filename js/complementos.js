@@ -4,7 +4,7 @@
 var tablaDeJuego = `
 <table  id="tableGame">
       <tr>
-        <td id="" class="casillaFree_Go casillaGo" id="position0"></td>
+        <td class="casillaGo" id="position0"></td>
         <td class="preguntasNormales" id="position1"></td>
         <td class="casillasNormales" id="position2"></td>
         <td class="preguntasNormales" id="position3"></td>
@@ -96,7 +96,7 @@ var tablaDeJuego = `
           <td class="preguntasBomba" id="position19"></td>
           <td class="casillasNormales" id="position18"></td>
           <td class="preguntasNormales" id="position17"></td>
-          <td id="" class="casillaFree_Go casillaFree" id="position16"></td>
+          <td class="casillaFree" id="position16"></td>
     
       </tr>
     </table>`;
