@@ -2,6 +2,10 @@
 .mostrar{
   display: block;
 }
+.mostrar_ModeFlex{
+  display: block;
+  display: flex;
+}
 .ocultar{
   display: none;
 }
@@ -35,10 +39,9 @@ body{
   #block1 div:first-child #contenedorPerfilesParticipantes{
     display: flex;
     margin: 10px 0 30px 0;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   #block1 div:first-child #contenedorPerfilesParticipantes span{
-    display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: aqua;
@@ -55,7 +58,16 @@ body{
     border-collapse: collapse;
     width: 100%;
   }
-
+  #dado {
+    width: 90px;
+    height: 100px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  #dado img{
+    width: 80px;
+  }
+  
   #tableGame td {
     border: 1px solid #000;
     text-align: center;
@@ -72,8 +84,11 @@ body{
     height: 100px;
   }
 
-  #tableGame td #position0{
+  #tableGame #position0{
     background-image: url(../img/go.jpeg);
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: 40px;
   }
   /* posicion de fichas en casillas */
   #tableGame td .iconsPlayers{
@@ -81,15 +96,22 @@ body{
     position: absolute;
   }
   #tableGame td #iconPlayer1{
-    top: 30px;
+    top: 5px;
     left: 15px;
    
   }
   #tableGame td #iconPlayer2{
-    top: 30px;
+    top: 50px;
     right: 15px;
   }
-
+  #tableGame td #iconPlayer3{
+    bottom: 5px;
+    left: 15px;
+  }
+  #tableGame td #iconPlayer4{
+    bottom: 50px;
+    right: 15px;
+  }
 
 
 

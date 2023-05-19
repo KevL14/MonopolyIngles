@@ -1,10 +1,4 @@
-var cantidadJugadores = 2;
-var imgAvatares = {
-    avatar1:'<img class="iconsPlayers" id="iconPlayer1" src="img/iconPlayer1.png" alt="iconPlayer1">',
-    avatar2:'<img class="iconsPlayers" id="iconPlayer2" src="img/iconPlayer2.jpeg" alt="iconPlayer2">',
-    avatar3:'<img class="iconsPlayers" id="iconPlayer3" src="img/iconPlayer3.png" alt="iconPlayer3">',
-    avatar4:'<img class="iconsPlayers" id="iconPlayer4" src="img/iconPlayer4.png" alt="iconPlayer4">'
-}
+var cantidadJugadores = 1;
 var avataresSeleccionados = {
     player1:"",
     player2:"",
@@ -24,14 +18,21 @@ function cantidadJugadoresPartida(numJugadores){
     cantidadJugadores = numJugadores;
     document.getElementById(`seleccionCantJugadores${cantidadJugadores}`).style="border:5px green solid;";
 
-    // reseteo los perfiles de los jugadores para que no se vean 
+    // reseteo las clases de los perfiles de los jugadores para luego ocultarlos
     var perfilPlayers = document.getElementsByClassName("contenedorInfoPlayers");
+    for (let index = 0; index < cantidadJugadores; index++) {
+        perfilPlayers[index].classList.remove("mostrar_ModeFlex");
+        perfilPlayers[index].classList.remove("ocultar");
+    }
+    // reseteo para que no se vea ninguno
     for (let index = 0; index < perfilPlayers.length; index++) {
-        perfilPlayers[index].classList.remove("mostrar");
+        perfilPlayers[index].classList.add("ocultar");
+        
     }
     // habilito los perfiles solo de lacantidad de jugadores que jugaran
     for (let index = 0; index < cantidadJugadores; index++) {
-        perfilPlayers[index].classList.add("mostrar");
+        perfilPlayers[index].classList.remove("ocultar");
+        perfilPlayers[index].classList.add("mostrar_ModeFlex");
         
     }
 }
@@ -39,6 +40,12 @@ function cantidadJugadoresPartida(numJugadores){
 
 // seccion 2 seleccion de avatares y nombre equipo 
 function seleccionAvatar(numAvatar,idSelect){
+    var imgAvatares = {
+        avatar1:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer1.png" alt="iconPlayer1">`,
+        avatar2:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer2.jpeg" alt="iconPlayer2">`,
+        avatar3:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer3.png" alt="iconPlayer3">`,
+        avatar4:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/iconPlayer4.png" alt="iconPlayer4">`
+    }
     // agarro el lugar donde imprimo la preimagen
     var imprimirAvatarElegido = document.getElementById(`imgAvatarSeleccionado${idSelect}`);
     // le imprimo segun la imagen seleccionada 
@@ -50,18 +57,18 @@ function seleccionAvatar(numAvatar,idSelect){
             break;
         case "2":
             imprimirAvatarElegido.innerHTML = imgAvatares.avatar2;
-            imgAvatarseleccionado = imgAvatares.avatar2
-                        break;
+            imgAvatarseleccionado = imgAvatares.avatar2;
+            break;
         case "3":
             imprimirAvatarElegido.innerHTML = imgAvatares.avatar3;
-            imgAvatarseleccionado = imgAvatares.avatar3
-                        break;
+            imgAvatarseleccionado = imgAvatares.avatar3;
+            break;
         case "4":
             imprimirAvatarElegido.innerHTML = imgAvatares.avatar4;
-            imgAvatarseleccionado = imgAvatares.avatar4
-                        break;
+            imgAvatarseleccionado = imgAvatares.avatar4;
+            break;
         default:
-            imprimirAvatarElegido.style="border:1px red solid";
+            imprimirAvatarElegido.innerHTML="";
             break;
     }
     // asigno la imagen que selecciono cada jugador 
@@ -76,16 +83,11 @@ function seleccionAvatar(numAvatar,idSelect){
             break;
         case 3:
             avataresSeleccionados.player3 = imgAvatarseleccionado
-
             break;
-            avataresSeleccionados.player4 = imgAvatarseleccionado
-
         case 4:
-
+            avataresSeleccionados.player4 = imgAvatarseleccionado
             break;
         default:
             break;
-    }
-    
-
+    } 
 }

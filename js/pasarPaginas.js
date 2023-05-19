@@ -15,6 +15,9 @@ function mostrarPaginas(page){
     idPaginaSelecionada.classList.add("mostrar")
     
 
-    // imprimo jugadores en tablero, se hace aqui para que ya inicie con los valores ya asignados
+    // imprimo el tablero y los jugadores en tablero, se hace aqui para que ya inicie con los valores ya asignados
+    document.getElementById("block2").innerHTML=  tablaDeJuego;
     document.getElementById(`position0`).innerHTML= `${avataresSeleccionados.player1} ${avataresSeleccionados.player2}`;
+    actulizarPosiciones()
+    document.getElementById("dado").innerHTML = '<img src="img/carasDado/cara1Fondo.png" alt="1"/>';
 }

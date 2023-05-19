@@ -1,7 +1,7 @@
 var turnoJugador = 1;
 // cantidad jugadores en documento pantallaPrincipalConfing.js 
 var positionPlayers ={
-    player1: 0,
+    player1:0,
     player2:0,
     player3:0,
     player4:0
