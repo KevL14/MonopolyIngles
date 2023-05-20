@@ -17,6 +17,6 @@ function mostrarPaginas(page){
     
 
     // imprimo el tablero y los jugadores en tablero, se hace aqui para que ya inicie con los valores ya asignados
-    actulizarPosiciones()
+   actualizarPosiciones()
     
 }

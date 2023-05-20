@@ -1,6 +1,4 @@
 
-
-
 var tablaDeJuego = `
 <table  id="tableGame">
       <tr>

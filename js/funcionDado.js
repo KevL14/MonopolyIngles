@@ -1,4 +1,5 @@
 var carasDado ={
+    cara0:"",
     cara1:'<img src="img/carasDado/cara1Fondo.png" alt="1"/>',
     cara2:'<img src="img/carasDado/cara2Fondo.png" alt="2"/>',
     cara3:'<img src="img/carasDado/cara3Fondo.png" alt="3"/>',
@@ -17,7 +18,7 @@ function lanzarDado(){
     // modifico la posicion actual para actualizar el dado 
     numeroDadoActual = numeroDado
     // actualizo los turnos logicaTurnosJugadores.js 
-    turnos(numeroDado)
+    animacionDado()
 }
 // actualizador de imagen que se ejecuta despues de resetear el tablero 
 function actualizarImgDado() {
@@ -56,3 +57,31 @@ function actualizarImgDado() {
     // imprimo el dado actual 
     btnDado.innerHTML = imgDado;
 }
+var numAnimacionRamdom = 0;
+async function animacionDado(){
+    var btnDado = document.getElementById("dado");
+    var numAnimacionRamdomimg = Math.floor(Math.random() * 6) + 1
+    var nombreCaraDado="cara"+numAnimacionRamdomimg
+        if(numAnimacionRamdom <=5) {
+            await dalay(100)
+            numAnimacionRamdom +=1
+            cambiarImgDadoRamdon()
+        }else{
+            numAnimacionRamdom = 0
+            await dalay(400)
+            turnos(numeroDadoActual)
+        }
+        async function cambiarImgDadoRamdon(){
+            console.log(numAnimacionRamdom)
+            btnDado.innerHTML=carasDado[nombreCaraDado]
+            await dalay(100)
+            animacionDado()
+        }
+        
+
+    }
+    function dalay(time) {
+        return new Promise(resolve=>
+          setTimeout(resolve,time)
+          )
+      }
