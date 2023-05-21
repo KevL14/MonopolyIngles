@@ -88,16 +88,21 @@ function seleccionAvatar(idSelect){
         case 1:
             avataresSeleccionados.player1 =imgAvatares[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player1
-            
+           // reseteo los que siguen
+            avataresSeleccionados.player2 = ""
+            avataresSeleccionados.player3=""
+            avataresSeleccionados.player4=""
             break;
         case 2:
             avataresSeleccionados.player2 = imgAvatares[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player2
-
+            avataresSeleccionados.player3=""
+            avataresSeleccionados.player4=""
             break;
         case 3:
             avataresSeleccionados.player3 = imgAvatares[nameNumAvatar]
-    imprimirAvatarElegido.innerHTML = avataresSeleccionados.player3
+            imprimirAvatarElegido.innerHTML = avataresSeleccionados.player3
+            avataresSeleccionados.player4=""
         break;
         case 4:
             avataresSeleccionados.player4 = imgAvatares[nameNumAvatar]
