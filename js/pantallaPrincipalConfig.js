@@ -1,13 +1,18 @@
 var cantidadJugadores = 1;
+
+
+
 var avataresSeleccionados = {
     player1:"",
     player2:"",
     player3:"",
     player4:"",
-    player5:"",
-    player6:"",
-    player7:"",
-    player8:"",
+    numeroAvatarSeleccionado:{
+        player1:1,
+        player2:1,
+        player3:1,
+        player4:1,
+    }
     
 }
 
@@ -18,11 +23,11 @@ function cantidadJugadoresPartida(numJugadores){
     var btnJugadoresPartida = document.getElementsByClassName("btn_CantJugadores");
     // reseteo de botones
     for (let index = 0; index < btnJugadoresPartida.length; index++) {
-        btnJugadoresPartida[index].style="border: black 5px solid";
+        btnJugadoresPartida[index].style="color:white;background-color: #244C76;";
     }
     // le añado el estilo al boton de la cantidades de jugadores a participar
     cantidadJugadores = numJugadores;
-    document.getElementById(`seleccionCantJugadores${cantidadJugadores}`).style="border:5px green solid;";
+    document.getElementById(`seleccionCantJugadores${cantidadJugadores}`).style="color:#244C76;background-color:white ;";
 
     // reseteo las clases de los perfiles de los jugadores para luego ocultarlos
     var perfilPlayers = document.getElementsByClassName("contenedorInfoPlayers");
@@ -41,6 +46,9 @@ function cantidadJugadoresPartida(numJugadores){
         perfilPlayers[index].classList.add("mostrar_ModeFlex");
         
     }
+    for (let i = 1; i <= cantidadJugadores; i++) {
+        seleccionAvatar(i)
+    }
 }
 
 
@@ -48,9 +56,20 @@ function cantidadJugadoresPartida(numJugadores){
 // inicializo por defecto los avatares 
 
 
-
+seleccionAvatar(1)
 // seccion 2 seleccion de avatares y nombre equipo 
-function seleccionAvatar(numAvatar,idSelect){
+function seleccionAvatar(idSelect){
+    var numid=idSelect
+    var playerSeleccion = "player"+numid;
+    avataresSeleccionados.numeroAvatarSeleccionado[playerSeleccion] +=1
+    if(avataresSeleccionados.numeroAvatarSeleccionado[playerSeleccion] == 9){
+        avataresSeleccionados.numeroAvatarSeleccionado[playerSeleccion]=1
+    }
+    var numAvatar = avataresSeleccionados.numeroAvatarSeleccionado[playerSeleccion] 
+    var nameNumAvatar = "avatar"+numAvatar
+
+    
+
     var imgAvatares = {
         avatar1:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player1.png" alt="iconPlayer1">`,
         avatar2:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player2.png" alt="iconPlayer2">`,
@@ -62,75 +81,30 @@ function seleccionAvatar(numAvatar,idSelect){
         avatar8:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player8.png" alt="iconPlayer8">`,
       }
     // agarro el lugar donde imprimo la preimagen
-    var imprimirAvatarElegido = document.getElementById(`imgAvatarSeleccionado${idSelect}`);
-    // le imprimo segun la imagen seleccionada 
-    var imgAvatarseleccionado;
-    switch (numAvatar) {
-        case "1":
-            imprimirAvatarElegido.innerHTML = imgAvatares.avatar1;
-            imgAvatarseleccionado= imgAvatares.avatar1;
-            break;
-        case "2":
-            imprimirAvatarElegido.innerHTML = imgAvatares.avatar2;
-            imgAvatarseleccionado = imgAvatares.avatar2;
-            break;
-        case "3":
-            imprimirAvatarElegido.innerHTML = imgAvatares.avatar3;
-            imgAvatarseleccionado = imgAvatares.avatar3;
-            break;
-        case "4":
-            imprimirAvatarElegido.innerHTML = imgAvatares.avatar4;
-            imgAvatarseleccionado = imgAvatares.avatar4;
-            break;
-            case "5":
-                imprimirAvatarElegido.innerHTML = imgAvatares.avatar5;
-                imgAvatarseleccionado = imgAvatares.avatar5;
-                break;
-                case "6":
-                    imprimirAvatarElegido.innerHTML = imgAvatares.avatar6;
-                    imgAvatarseleccionado = imgAvatares.avatar6;
-                    break;
-                    case "7":
-                        imprimirAvatarElegido.innerHTML = imgAvatares.avatar7;
-                        imgAvatarseleccionado = imgAvatares.avatar7;
-                        break;
-                        case "8":
-                            imprimirAvatarElegido.innerHTML = imgAvatares.avatar8;
-                            imgAvatarseleccionado = imgAvatares.avatar8;
-                            break;
-                        
-        default:
-            imprimirAvatarElegido.innerHTML="";
-            break;
-    }
+    var imprimirAvatarElegido = document.getElementById(`seleccionAvatar${idSelect}`);
+
     // asigno la imagen que selecciono cada jugador 
     switch (idSelect) {
         case 1:
-            avataresSeleccionados.player1 = imgAvatarseleccionado
-
+            avataresSeleccionados.player1 =imgAvatares[nameNumAvatar]
+            imprimirAvatarElegido.innerHTML = avataresSeleccionados.player1
+            
             break;
         case 2:
-            avataresSeleccionados.player2 = imgAvatarseleccionado
+            avataresSeleccionados.player2 = imgAvatares[nameNumAvatar]
+            imprimirAvatarElegido.innerHTML = avataresSeleccionados.player2
 
             break;
         case 3:
-            avataresSeleccionados.player3 = imgAvatarseleccionado
-            break;
+            avataresSeleccionados.player3 = imgAvatares[nameNumAvatar]
+    imprimirAvatarElegido.innerHTML = avataresSeleccionados.player3
+        break;
         case 4:
-            avataresSeleccionados.player4 = imgAvatarseleccionado
-            break;
-            case 5:
-                avataresSeleccionados.player5 = imgAvatarseleccionado
-                break;
-                case 6:
-                    avataresSeleccionados.player6 = imgAvatarseleccionado
-                    break;
-                    case 7:
-                        avataresSeleccionados.player7 = imgAvatarseleccionado
-                        break;
-                        case 8:
-                            avataresSeleccionados.player8 = imgAvatarseleccionado
-                            break;
+            avataresSeleccionados.player4 = imgAvatares[nameNumAvatar]
+            imprimirAvatarElegido.innerHTML = avataresSeleccionados.player4
+
+        break;
+
 
         default:
             break;

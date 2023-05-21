@@ -11,99 +11,76 @@
     
 </head>
 <body>    
-  <section class ="paginas mostrar" id="block1">
-    <div>
-      <h1>Name tableGame</h1>
 
 
-      <h2>Elegir cantidad de jugadores que desea jugadores</h2>
-      <div id="contenedorNumParticipantes">
-        <button class="btn_CantJugadores" id="seleccionCantJugadores1" onclick="cantidadJugadoresPartida(1)">1</button>
-        <button class="btn_CantJugadores" id="seleccionCantJugadores2" onclick="cantidadJugadoresPartida(2)">2</button>
-        <button class="btn_CantJugadores" id="seleccionCantJugadores3" onclick="cantidadJugadoresPartida(3)">3</button>
-        <button class="btn_CantJugadores" id="seleccionCantJugadores4" onclick="cantidadJugadoresPartida(4)">4</button>
-      </div>
+  <section class ="paginas mostrar_ModeFlex" id="block1">
+    <span id="titleGame">
+      <h1>CATCH THE VERB!</h1>
+      <h2>Select a player</h2>
+   </span>
       <div id="contenedorPerfilesParticipantes">
         <!-- perfil jugador 1 -->
-        <span class="contenedorInfoPlayers ocultar">
+        <span class="contenedorInfoPlayers">
+          <h1 class="numsPlayersTitle">Player 1</h1>
 
-          <span id="imgAvatarSeleccionado1" ></span>
-          <select name="" id="seleccionAvatar1" onchange="seleccionAvatar(this.value,1)">
-            <option value="0" selected>Avatar</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-          <input type="text" name="" id="" placeHolder="nameTeam">
+          <span id="seleccionAvatar1" onClick="seleccionAvatar(1)"></span>
+
+          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
         </span>
 
         <!-- perfil jugador 2 -->
         <span class="contenedorInfoPlayers ocultar">
+          <h1 class="numsPlayersTitle">Player 2</h1>
 
-          <span id="imgAvatarSeleccionado2"></span>
-          <select name="" id="seleccionAvatar2" onchange="seleccionAvatar(this.value,2)">
-            <option value="0" selected>Avatar</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-          <input type="text" name="" id="" placeHolder="nameTeam">
+          <span id="seleccionAvatar2" onClick="seleccionAvatar(2)"></span>
+
+          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
         </span>
 
                 <!-- perfil jugador 3 -->
 
         <span class="contenedorInfoPlayers ocultar">
+          <h1 class="numsPlayersTitle">Player 3</h1>
+          <span id="seleccionAvatar3" onClick="seleccionAvatar(3)"></span>
 
-          <span id="imgAvatarSeleccionado3"></span>
-          <select name="" id="seleccionAvatar3" onchange="seleccionAvatar(this.value,3)">
-            <option value="0" selected>Avatar</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-          <input type="text" name="" id="" placeHolder="nameTeam">
+          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
         </span>
 
                 <!-- perfil jugador 4 -->
 
         <span class="contenedorInfoPlayers ocultar">
-          <span id="imgAvatarSeleccionado4"></span>
-          <select name="" id="seleccionAvatar4" onchange="seleccionAvatar(this.value,4)">
-            <option value="0" selected>Avatar</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-          <input type="text" name="" id="" placeHolder="nameTeam">
+          <h1 class="numsPlayersTitle">Player 4</h1>
+
+          <span id="seleccionAvatar4" onClick="seleccionAvatar(4)"></span>
+
+          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
         </span>
       </div>
 
 
-      <button id="buttonPlayGame" onclick="mostrarPaginas(2)"></button>
-
-      
-  </div>
+      <span id="opcionesMenuPrincipal">
+        <!-- <button  ></button> -->
+        <button id="buttonPlayGame" onclick="mostrarPaginas(2)">
+          <span class="circle1"></span>
+          <span class="circle2"></span>
+          <span class="circle3"></span>
+          <span class="circle4"></span>
+          <span class="circle5"></span>
+          <span class="text">READY TO PLAY!</span>
+      </button>
+        <div id="contenedorNumParticipantes">
+          <span><h1>NUMBER OF Players</h1></span>
+          <span>
+            <button class="btn_CantJugadores" id="seleccionCantJugadores1" onclick="cantidadJugadoresPartida(1)">1</button>
+            <button class="btn_CantJugadores" id="seleccionCantJugadores2" onclick="cantidadJugadoresPartida(2)">2</button>
+            <button class="btn_CantJugadores" id="seleccionCantJugadores3" onclick="cantidadJugadoresPartida(3)">3</button>
+            <button class="btn_CantJugadores" id="seleccionCantJugadores4" onclick="cantidadJugadoresPartida(4)">4</button>
+        </span>
+        </div>  
+    </span>
+  
   </section>
+
 
   
   <section class="paginas ocultar" id="block2"><!-- tabla de juego por js --></section>
