@@ -1,0 +1,62 @@
+/* cortina cerrando de derecha a izquierda  */
+@keyframes wipe-in-left {
+    from {
+      clip-path: inset(0 0 0 100%);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  /* efecto de escritura de texto */
+  @keyframes typing{
+    from{width: 0;}
+  }
+  @keyframes blink{
+    50% {border-color: transparent;}
+  }
+
+  /* ciere en circulo hacia esquina inferior izquierda */
+
+  @keyframes circle-out-bottom-left {
+    from {
+      clip-path: circle(125%);
+    }
+    to {
+      clip-path: circle(0% at bottom left);
+    }
+  }
+  
+  [transition-style="out:circle:bottom-left"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-bottom-left both;
+  }
+  /* animacion de entrada para avatares.. circulo mas rapido que se expande desde el centro  */
+  @keyframes circle-in-center {
+    from {
+      clip-path: circle(0%);
+    }
+    to {
+      clip-path: circle(125%);
+    }
+  }
+  
+  [transition-style="in:circle:center"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-center both;
+  }
+
+  /* abre con un circulo desde el centro que se expande hacia afuera */
+  @keyframes circle-in-hesitate {
+    0% {
+      clip-path: circle(0%);
+    }
+    40% {
+      clip-path: circle(40%);
+    }
+    100% {
+      clip-path: circle(125%);
+    }
+  }
+  
+  [transition-style="in:circle:hesitate"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
+  }

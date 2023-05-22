@@ -10,7 +10,7 @@ function actualizarPosiciones() {
 }
 // limpiarTablero: Limpia el tablero y muestra la tabla de juego y la imagen del dado actualizada.
 function limpiarTablero() {
-  document.getElementById("block2").innerHTML = tablaDeJuego;
+  document.getElementById("block3").innerHTML = tablaDeJuego;
   actualizarImgDado();
 }
 // mostrarNuevasPosiciones: Muestra las nuevas posiciones de los jugadores en sus respectivas casillas.

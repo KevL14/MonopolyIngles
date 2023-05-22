@@ -32,7 +32,7 @@ function cantidadJugadoresPartida(numJugadores){
     // reseteo las clases de los perfiles de los jugadores para luego ocultarlos
     var perfilPlayers = document.getElementsByClassName("contenedorInfoPlayers");
     for (let index = 0; index < cantidadJugadores; index++) {
-        perfilPlayers[index].classList.remove("mostrar_ModeFlex");
+        perfilPlayers[index].classList.remove("mostrarAvatar");
         perfilPlayers[index].classList.remove("ocultar");
     }
     // reseteo para que no se vea ninguno
@@ -43,7 +43,7 @@ function cantidadJugadoresPartida(numJugadores){
     // habilito los perfiles solo de lacantidad de jugadores que jugaran
     for (let index = 0; index < cantidadJugadores; index++) {
         perfilPlayers[index].classList.remove("ocultar");
-        perfilPlayers[index].classList.add("mostrar_ModeFlex");
+        perfilPlayers[index].classList.add("mostrarAvatar");
         
     }
     for (let i = 1; i <= cantidadJugadores; i++) {

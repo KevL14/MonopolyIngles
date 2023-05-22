@@ -5,15 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animaciones.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/btnStartStyle.css">
-    <title>Tabla del Monopoly</title>
-    
+    <link rel="shortcut icon" href="img/IconGame.png" type="image/x-icon">
+    <!-- fuentes letra -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Staatliches&display=swap" rel="stylesheet">
+    <title>CATCH THE VERB!</title>
+
 </head>
-<body>    
+<body>
+  <section class ="paginas ocultar" id="block0">
+    <img src="img/paginaPresentacion/flecha.png" onclick="mostrarPaginas(0,0)" id="salirMenu"alt="------>">
+    <h1>SETTINGS</h1>
+    <span>
+      <h2>Controles de Audio</h2>
+      <audio controls>
+        <source src="sound/sonidoAmbiente.mp3" type="audio/mpeg">
+      </audio>
+    </span>
+
+    
+
+  </section>
+
+  <section  class ="paginas mostrar_ModeFlex" id="block1">
+    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="settingsButton" viewBox="0 0 16 16" onclick="mostrarPaginas(0,1)">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+
+    <div class="containerTitlesGame">
 
 
-  <section class ="paginas mostrar_ModeFlex" id="block1">
+      <h1>WELCOME TO CATCH THE VERB!</h1>
+      <p>Are you able to identify the verb tense? Let's see...</p>
+      <img src="img/paginaPresentacion/flecha.png" onclick="mostrarPaginas(2)" alt="------>">
+    </div>
+    <img src="img/paginaPresentacion/personajes_pag_1.png"  alt="">
+  </section>
+
+  <section class ="paginas ocultar" id="block2">
+    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="settingsButton" viewBox="0 0 16 16" onclick="mostrarPaginas(0,2)">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
     <span id="titleGame">
       <h1>CATCH THE VERB!</h1>
       <h2>Select a player</h2>
@@ -59,8 +95,16 @@
 
 
       <span id="opcionesMenuPrincipal">
+        <div id="contenedorNumVueltas">
+          <span class="titlesLaps_NumPlayers"><h1>LAPS</h1></span>
+          <select name="" class="" id="selectLaps">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
         <!-- <button  ></button> -->
-        <button id="buttonPlayGame" onclick="mostrarPaginas(2)">
+        <button id="buttonPlayGame" onclick="mostrarPaginas(3)">
           <span class="circle1"></span>
           <span class="circle2"></span>
           <span class="circle3"></span>
@@ -69,21 +113,21 @@
           <span class="text">READY TO PLAY!</span>
       </button>
         <div id="contenedorNumParticipantes">
-          <span><h1>NUMBER OF Players</h1></span>
+          <span class="titlesLaps_NumPlayers"><h1>NUMBER OF Players</h1></span>
           <span>
             <button class="btn_CantJugadores" id="seleccionCantJugadores1" onclick="cantidadJugadoresPartida(1)">1</button>
             <button class="btn_CantJugadores" id="seleccionCantJugadores2" onclick="cantidadJugadoresPartida(2)">2</button>
             <button class="btn_CantJugadores" id="seleccionCantJugadores3" onclick="cantidadJugadoresPartida(3)">3</button>
             <button class="btn_CantJugadores" id="seleccionCantJugadores4" onclick="cantidadJugadoresPartida(4)">4</button>
         </span>
-        </div>  
+        </div>
     </span>
-  
+
   </section>
 
 
-  
-  <section class="paginas ocultar" id="block2"><!-- tabla de juego por js --></section>
+
+  <section class="paginas ocultar" id="block3"><!-- tabla de juego por js --></section>
 
 
   <script src="js/logicaTurnosJugadores.js"></script>
