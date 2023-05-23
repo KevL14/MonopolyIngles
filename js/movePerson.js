@@ -1,5 +1,6 @@
 var numeroJugadoresMismaPosicion = [];
 var jugadoresjuntosAnteriores = "";
+var player;
 
 function actualizarPosiciones() {
   limpiarTablero();
@@ -64,6 +65,8 @@ async function animarMovimiento() {
       verificarJugadoresMismaPosicion();
       imprimirJugadoresJuntos(); 
       imprimirJugadoresAnteriores();
+        await dalay(1500)
+      mostrarPregunta(player)
     }
 
   

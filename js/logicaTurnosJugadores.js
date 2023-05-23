@@ -1,6 +1,6 @@
 var turnoJugador = 1;
 var numDadoActual;
-var cantidadVueltas = 1;
+
 // cantidad jugadores en documento pantallaPrincipalConfing.js 
 var positionPlayers ={
     player1:0,

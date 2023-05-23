@@ -104,7 +104,7 @@ body{
   white-space: nowrap;
   border-right: 4px solid;
   font-family: 'DM Sans', sans-serif;;
-  width: 42ch;
+  width: 41ch;
   color: white;
   font-size: 34px;
   font-weight: 600;
@@ -142,7 +142,6 @@ body{
  /* seleccion de cantidad jugadores  */
 #block2 #titleGame{
 margin-bottom: 50px;
-background-color: #FF849C;
 text-align: center;
 color: #fff;
 }
@@ -384,3 +383,70 @@ color: #fff;
     background-image: url(../img/casillas/casilla\ free.png);
   }
   
+
+  /* pagina de ganadores */
+  /* block4 */
+
+
+
+  /* pagina de preguntas  */
+  /* paginapreguntasNormales */
+  #block5{
+  justify-content: center;
+  align-items: center;
+flex-direction: unset;
+  width: 100%;
+  height: 41.4pc;
+  background-image: url(../img/fondoBlock0.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  justify-content: space-around;
+}
+  #block5 #contenedorPregunta{
+    width: 100%;
+    display: flex;
+    padding-left: 30px;
+  }
+  #block5 #contenedorPregunta #imgTarjetaPregunta{
+    position: relative;
+  }
+  #block5 #contenedorPregunta #imgTarjetaPregunta #textPregunta{
+  position: absolute;
+  top: 200px;
+  left: 60px;
+  width: 200px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+  #block5 #contenedorPregunta #imgTarjetaPregunta img{
+    width: 400px;
+        border-radius: 20px;
+  }
+  #block5 #contenedorPregunta #contenedorRespuestas{
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 80px;
+  }
+  #block5 #contenedorPregunta #contenedorRespuestas button{
+    width: 100%;
+    display: flex;
+    background-color: #fdfdfd;
+    padding: 3%;
+    text-align: center;
+    justify-content: space-around;
+    cursor: pointer;
+    font-size: 20px;
+    color: #244c76;
+    border: none;
+    font-weight: 800;
+    font-family: 'DM Sans', sans-serif;;
+    border-radius: 11px;
+  }
+  #block5 #contenedorPregunta #contenedorRespuestas button:hover{
+    transform: scale(1.2);
+    transition: transform .2s;
+  }

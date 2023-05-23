@@ -1,5 +1,5 @@
 var cantidadJugadores = 1;
-
+var cantidadVueltas = 1;
 
 
 var avataresSeleccionados = {
@@ -115,4 +115,7 @@ function seleccionAvatar(idSelect){
             break;
     } 
 
+}
+function numVueltas(numeroVueltas) {
+    cantidadVueltas = numeroVueltas
 }

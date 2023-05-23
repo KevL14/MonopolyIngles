@@ -22,7 +22,7 @@
     <h1>SETTINGS</h1>
     <span>
       <h2>Controles de Audio</h2>
-      <audio controls>
+      <audio id="sonidoAmbiente" controls>
         <source src="sound/sonidoAmbiente.mp3" type="audio/mpeg">
       </audio>
     </span>
@@ -97,7 +97,7 @@
       <span id="opcionesMenuPrincipal">
         <div id="contenedorNumVueltas">
           <span class="titlesLaps_NumPlayers"><h1>LAPS</h1></span>
-          <select name="" class="" id="selectLaps">
+          <select name="" class="" id="selectLaps" onchange="numVueltas(this.value)">
             <option value="1" selected>1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -128,7 +128,29 @@
 
 
   <section class="paginas ocultar" id="block3"><!-- tabla de juego por js --></section>
+  <section class="paginas ocultar" id="block4"></section>
 
+  <!-- paginas adicionales -->
+  <section class="paginas ocultar" id="block5">
+    <span id="contenedorPregunta">
+      <span id="imgTarjetaPregunta">
+        <img src="img/Tarjetas/tarjeta preguntas.png" alt="">
+      </span>
+
+      <span id="contenedorRespuestas">
+        <button id="btnRespuesta1">respuestas</button>
+        <button id="btnRespuesta2">respuestas</button>
+        <button id="btnRespuesta3">respuestas</button>
+        <button id="btnRespuesta4">respuestas</button>
+      </span>
+    </span>
+  </section>
+
+  <span class="ocultar" id="sonidos">
+    <audio id="sonidoDado">
+      <source src="sound/sonido-dado.mp3" type="audio/mpeg">
+    </audio>
+  </span>
 
   <script src="js/logicaTurnosJugadores.js"></script>
   <script src="js/pasarPaginas.js"></script>
@@ -136,5 +158,8 @@
   <script src="js/pantallaPrincipalConfig.js"></script>
   <script src="js/complementos.js"></script>
   <script src="js/funcionDado.js"></script>
+  <script src="js/sonidosControles.js"></script>
+  <script src="js/preguntas.js"></script>
+  <script src="js/funcionesRealizarPreguntas.js"></script>
 </body>
 </html>

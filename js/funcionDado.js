@@ -9,11 +9,11 @@ var carasDado ={
 }
 
 
-
 var numeroDadoActual;
 // la funcion que genera los numeros del dado
 function lanzarDado(){
-
+    // reproduzco sonido del dado
+    sonidoDado.play()
     var numeroDado = Math.floor(Math.random() * 6) + 1;
     // modifico la posicion actual para actualizar el dado 
     numeroDadoActual = numeroDado
