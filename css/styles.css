@@ -103,7 +103,7 @@ body{
 #block1 .containerTitlesGame p{
   white-space: nowrap;
   border-right: 4px solid;
-  font-family: 'DM Sans', sans-serif;;
+  font-family: 'DM Sans', sans-serif;
   width: 41ch;
   color: white;
   font-size: 34px;
@@ -148,9 +148,13 @@ color: #fff;
 #block2 #titleGame h1{
   font-size: 70px;
   font-weight: 700;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 10px;
 }
 #block2 #titleGame h2{
   font-size: 30px;
+  font-family: 'DM Sans', sans-serif;
+
 }
 /* numsPlayersTitle */
 
@@ -170,6 +174,8 @@ color: #fff;
   }
   #block2  #contenedorPerfilesParticipantes .numsPlayersTitle{
     background-color: #244c76;
+    font-family: 'DM Sans', sans-serif;
+
     padding: 5%;
     width: 70%;
     margin: 0 auto;
@@ -397,7 +403,7 @@ color: #fff;
 flex-direction: unset;
   width: 100%;
   height: 41.4pc;
-  background-image: url(../img/fondoBlock0.png);
+  background-image: url(../img/Tarjetas/fondo.png);
   background-size: 100%;
   background-repeat: no-repeat;
   justify-content: space-around;
@@ -412,16 +418,21 @@ flex-direction: unset;
   }
   #block5 #contenedorPregunta #imgTarjetaPregunta #textPregunta{
   position: absolute;
-  top: 200px;
-  left: 60px;
-  width: 200px;
+  top: 220px;
+  left: 70px;
+  max-width: 250px;
+  font-family: 'DM Sans', sans-serif;
+  color: rgb(75, 75, 75);
   font-weight: 800;
-  font-size: 20px;
+  font-size: 45px;
+  text-align: center;
 }
 
   #block5 #contenedorPregunta #imgTarjetaPregunta img{
     width: 400px;
-        border-radius: 20px;
+    border-radius: 20px;
+    pointer-events: none;
+
   }
   #block5 #contenedorPregunta #contenedorRespuestas{
     width: 400px;

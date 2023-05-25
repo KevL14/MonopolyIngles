@@ -12,6 +12,11 @@ var positionPlayers ={
         player2:0,
         player3:0,
         player4:0,
+    },penalidades:{
+        player1:0,
+        player2:0,
+        player3:0,
+        player4:0
     },
     posicionAnterior:{
         player1:0,

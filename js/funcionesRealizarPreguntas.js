@@ -1,19 +1,18 @@
 var casillasPreguntasNormales=[1,3,5,7,9,11,14,17,20,23,25,27,29]
 var casillasPreguntasBomba=[6,13,19,24,31]
 var casillasPreguntasDificiles=[4,10,22,28,30]
+var tipoPregunta;
+var pregunta;
 var imgTarjetasPreguntas={
-    preguntaNormal:`<img src="img/Tarjetas/tarjeta preguntas.png" alt="">`,
-    preguntaBomba:`<img src="img/Tarjetas/targeta retos.png" alt="">`,
-    preguntaDificil:`<img src="img/Tarjetas/targeta peligro.png" alt="">`
+    preguntaNormal:`<img src="img/Tarjetas/tarjeta preguntas.jpg" alt="">`,
+    preguntaBomba:`<img src="img/Tarjetas/tarjeta retos.jpg" alt="">`,
+    preguntaDificil:`<img src="img/Tarjetas/tarjeta peligro.jpg" alt="">`
 }
 // pagina de respuesta
 var imgTarjetaType;
 var imgTarjeta = document.getElementById("imgTarjetaPregunta")
 var textTarjeta = document.getElementById("textPregunta")
-var btn1_respuesta=document.getElementById("btnRespuesta1")
-var btn2_respuesta=document.getElementById("btnRespuesta2")
-var btn3_respuesta=document.getElementById("btnRespuesta3")
-var btn4_respuesta=document.getElementById("btnRespuesta4")
+var contentRespuestas = document.getElementById("contenedorRespuestas")
 
 
 function mostrarPregunta(jugador) {
@@ -55,10 +54,10 @@ function mostrarPregunta(jugador) {
     }
 
 }
-function escogerPreguntaAzar(tipoPregunta){
+function escogerPreguntaAzar(tipo){
     var numPregunta ;
-    var pregunta;
-    switch (tipoPregunta) {
+    tipoPregunta = tipo
+    switch (tipo) {
         case 1:
             numPregunta = Math.floor(Math.random() * easyQuestions.length)
             pregunta = easyQuestions[numPregunta]
@@ -68,18 +67,41 @@ function escogerPreguntaAzar(tipoPregunta){
             pregunta = mediumQuestions[numPregunta]
             break;
             case 3:
-                numPregunta = Math.floor(Math.random() * hardQuestions.length)
-                pregunta = hardQuestions[numPregunta]
+                numPregunta = Math.floor(Math.random() * difficultQuestions.length)
+                pregunta = difficultQuestions[numPregunta]
                 break;
             
         default:
             break;
     }
     imgTarjeta.innerHTML = imgTarjetaType + `<span id="textPregunta">${pregunta.question}</span>`
-    btn1_respuesta.innerHTML=pregunta.answers[0]
-    btn2_respuesta.innerHTML=pregunta.answers[1]
-    btn3_respuesta.innerHTML=pregunta.answers[2]
-    btn4_respuesta.innerHTML=pregunta.answers[3]
-    
-    console.log(pregunta)
+    var htmlButtonsRespuesta = "";
+    htmlButtonsRespuesta+=`<button id="btnRespuesta1" onclick="evaluarRespuesta("${pregunta.answers[0]}")">${pregunta.answers[0]}</button>`
+    htmlButtonsRespuesta+=`<button id="btnRespuesta2" onclick="evaluarRespuesta("${pregunta.answers[1]}")">${pregunta.answers[1]}</button>`
+    htmlButtonsRespuesta+=`<button id="btnRespuesta3" onclick="evaluarRespuesta("${pregunta.answers[2]}")">${pregunta.answers[2]}</button>`
+    htmlButtonsRespuesta+=`<button id="btnRespuesta4" onclick="evaluarRespuesta("${pregunta.answers[3]}")">${pregunta.answers[3]}</button>`
+    contentRespuestas.innerHTML = htmlButtonsRespuesta
+}
+
+function evaluarRespuesta(respuesta) {
+    alert(pregunta.correctAnswer)
+    alert(respuesta)
+    buttonRespuestaUser = document.getElementById(respuesta)
+    buttonRespuestaCorrecta = document.getElementById(pregunta.correctAnswer)
+    if (respuesta != pregunta.correctAnswer) {
+     switch (tipoPregunta) {
+        case 1:
+            positionPlayers.penalidades[player] +=1
+            break;
+        case 2:
+            positionPlayers.penalidades[player] +=2
+            break;
+        case 3:
+            positionPlayers.penalidades[player] +=3
+            break;
+     }
+
+     buttonRespuestaUser.style = "background-color: red"
+     buttonRespuestaCorrecta.style = "background-color: green"
+    }
 }
