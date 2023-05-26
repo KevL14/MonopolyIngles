@@ -175,7 +175,6 @@ color: #fff;
   #block2  #contenedorPerfilesParticipantes .numsPlayersTitle{
     background-color: #244c76;
     font-family: 'DM Sans', sans-serif;
-
     padding: 5%;
     width: 70%;
     margin: 0 auto;
@@ -412,19 +411,20 @@ flex-direction: unset;
     width: 100%;
     display: flex;
     padding-left: 30px;
+    justify-content: space-around;
   }
   #block5 #contenedorPregunta #imgTarjetaPregunta{
     position: relative;
   }
   #block5 #contenedorPregunta #imgTarjetaPregunta #textPregunta{
   position: absolute;
-  top: 220px;
-  left: 70px;
-  max-width: 250px;
+  top: 190px;
+  left: 50px;
+  max-width: 300px;
   font-family: 'DM Sans', sans-serif;
   color: rgb(75, 75, 75);
   font-weight: 800;
-  font-size: 45px;
+  font-size: 35px;
   text-align: center;
 }
 
@@ -440,9 +440,8 @@ flex-direction: unset;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    margin-left: 80px;
   }
-  #block5 #contenedorPregunta #contenedorRespuestas button{
+  #block5 #contenedorPregunta #contenedorRespuestas .btn_Respuestas{
     width: 100%;
     display: flex;
     background-color: #fdfdfd;
@@ -461,3 +460,36 @@ flex-direction: unset;
     transform: scale(1.2);
     transition: transform .2s;
   }
+
+#block5 #contenedorPregunta #imgJugadorPreguntado{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#block5 #contenedorPregunta #imgJugadorPreguntado h1,
+#block5 #contenedorPregunta #imgJugadorPreguntado p{
+  background-color: #244c76c1;
+  border: 1px white solid;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  padding: 5%;
+  width: 70%;
+  margin: 0 auto;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  border-radius: 11px;
+}
+#block5 #contenedorPregunta #imgJugadorPreguntado #continuarJuego_Pregunta{
+  display: none;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  transform: rotate(180deg);
+  filter: invert(100%);
+  pointer-events: painted;
+}
+#block5 #contenedorPregunta #imgJugadorPreguntado #continuarJuego_Pregunta:hover{
+  transform: rotate(180deg);
+}

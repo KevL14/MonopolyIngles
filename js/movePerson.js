@@ -1,10 +1,16 @@
 var numeroJugadoresMismaPosicion = [];
 var jugadoresjuntosAnteriores = "";
 var player;
+var rutaPregunta;
 
-function actualizarPosiciones() {
-  limpiarTablero();
-  animarMovimiento();
+function actualizarPosiciones(ruta) {
+  rutaPregunta = ruta;
+  if (ruta == 0){
+    limpiarTablero();
+    animarMovimiento();
+  }
+
+  
   // verificarJugadoresMismaPosicion();
   // imprimirJugadoresJuntos();
   // imprimirJugadoresAnteriores();
@@ -19,12 +25,10 @@ function limpiarTablero() {
 async function animarMovimiento() {
   var turnoplayer = turnoJugador
   var player="player"+turnoplayer
-    
-    
     var posicionActual = positionPlayers.posicionAnterior[player];
     var posicionNueva =positionPlayers[player]; // Función que obtiene la nueva posición asignada al jugador
     
-
+  
     while (posicionActual<posicionNueva){
       // Realizar animación de movimiento
         document.getElementById("position" + positionPlayers.posicionAnterior[player]).innerHTML=avataresSeleccionados[player];

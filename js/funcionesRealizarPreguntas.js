@@ -3,6 +3,7 @@ var casillasPreguntasBomba=[6,13,19,24,31]
 var casillasPreguntasDificiles=[4,10,22,28,30]
 var tipoPregunta;
 var pregunta;
+var playerPregunta;
 var imgTarjetasPreguntas={
     preguntaNormal:`<img src="img/Tarjetas/tarjeta preguntas.jpg" alt="">`,
     preguntaBomba:`<img src="img/Tarjetas/tarjeta retos.jpg" alt="">`,
@@ -19,6 +20,7 @@ function mostrarPregunta(jugador) {
     var hacerPreguntaNormal=false;
     var hacerPreguntaBomba=false;
     var hacerPreguntaDificil=false;
+    playerPregunta = jugador
 
     // verifico a ver si alguna de las posiciones del jugador es de alguna casilla de pregunta 
     for (let index = 0; index < casillasPreguntasNormales.length; index++) {
@@ -66,42 +68,57 @@ function escogerPreguntaAzar(tipo){
             numPregunta = Math.floor(Math.random() * mediumQuestions.length)
             pregunta = mediumQuestions[numPregunta]
             break;
-            case 3:
-                numPregunta = Math.floor(Math.random() * difficultQuestions.length)
-                pregunta = difficultQuestions[numPregunta]
-                break;
+        case 3:
+            numPregunta = Math.floor(Math.random() * difficultQuestions.length)
+            pregunta = difficultQuestions[numPregunta]
+            break;
             
         default:
             break;
     }
     imgTarjeta.innerHTML = imgTarjetaType + `<span id="textPregunta">${pregunta.question}</span>`
     var htmlButtonsRespuesta = "";
-    htmlButtonsRespuesta+=`<button id="btnRespuesta1" onclick="evaluarRespuesta("${pregunta.answers[0]}")">${pregunta.answers[0]}</button>`
-    htmlButtonsRespuesta+=`<button id="btnRespuesta2" onclick="evaluarRespuesta("${pregunta.answers[1]}")">${pregunta.answers[1]}</button>`
-    htmlButtonsRespuesta+=`<button id="btnRespuesta3" onclick="evaluarRespuesta("${pregunta.answers[2]}")">${pregunta.answers[2]}</button>`
-    htmlButtonsRespuesta+=`<button id="btnRespuesta4" onclick="evaluarRespuesta("${pregunta.answers[3]}")">${pregunta.answers[3]}</button>`
+    htmlButtonsRespuesta+=`<button id="${pregunta.answers[0]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[0]}')">${pregunta.answers[0]}</button>`
+    htmlButtonsRespuesta+=`<button id="${pregunta.answers[1]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[1]}')">${pregunta.answers[1]}</button>`
+    htmlButtonsRespuesta+=`<button id="${pregunta.answers[2]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[2]}')">${pregunta.answers[2]}</button>`
+    htmlButtonsRespuesta+=`<button id="${pregunta.answers[3]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[3]}')">${pregunta.answers[3]}</button>`
     contentRespuestas.innerHTML = htmlButtonsRespuesta
+    continuarJuego_Pregunta.style="display:none;"
 }
 
-function evaluarRespuesta(respuesta) {
-    alert(pregunta.correctAnswer)
-    alert(respuesta)
+async function evaluarRespuesta(respuesta) {
     buttonRespuestaUser = document.getElementById(respuesta)
     buttonRespuestaCorrecta = document.getElementById(pregunta.correctAnswer)
+    await dalay(500)
     if (respuesta != pregunta.correctAnswer) {
      switch (tipoPregunta) {
         case 1:
-            positionPlayers.penalidades[player] +=1
+            positionPlayers.penalidades[playerPregunta] +=1;
             break;
         case 2:
-            positionPlayers.penalidades[player] +=2
+            positionPlayers.penalidades[playerPregunta] +=2;
             break;
         case 3:
-            positionPlayers.penalidades[player] +=3
+            positionPlayers.penalidades[playerPregunta] +=3;
             break;
      }
-
-     buttonRespuestaUser.style = "background-color: red"
-     buttonRespuestaCorrecta.style = "background-color: green"
+    
+     buttonRespuestaUser.style = "background-color: red; color:white;transform: scale(1.2);"
+     buttonRespuestaCorrecta.style = "background-color: green;color:white;"
+    }else{
+        buttonRespuestaUser.style = "background-color: green;color:white;transform: scale(1.2);"      
     }
+    var listButtonsRespuestas= document.getElementsByClassName("btn_Respuestas")
+    for (let i = 0; i < listButtonsRespuestas.length; i++) {
+        listButtonsRespuestas[i].disabled=true;
+    }
+    continuarJuego_Pregunta.style="display:block;"
+}
+
+
+// dalay de tiempos 
+function dalay(time) {
+  return new Promise(resolve=>
+    setTimeout(resolve,time)
+    )
 }

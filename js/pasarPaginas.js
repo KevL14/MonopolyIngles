@@ -10,8 +10,7 @@ function mostrarPaginas(page,anteriorPage){
     }else if(page ==5||page ==2){
         mostrarTipo = "mostrar_ModeFlex"
         idPaginaSelecionada=document.getElementById(`block${page}`)
-    }
-    else{
+    }else{
         mostrarTipo = "mostrar"
         idPaginaSelecionada=document.getElementById(`block${page}`)
     }
@@ -31,7 +30,11 @@ function mostrarPaginas(page,anteriorPage){
     
 
     // imprimo el tablero y los jugadores en tablero, se hace aqui para que ya inicie con los valores ya asignados
-   if(page ==3){
-    actualizarPosiciones()
+    // si la pagina es 3 y la anterior es 5, quiere decir que vienen de contestar rutaPregunta, y mando
+    // 1 como parametro para que no actulicen nada de las pocisiones y por ende no vuelvan a hacer preguntas
+   if(page ==3 && anteriorPage == 5){
+    actualizarPosiciones(1)
+    }else if(page == 3){
+        actualizarPosiciones(0)
     }
 }

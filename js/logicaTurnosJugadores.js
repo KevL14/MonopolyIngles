@@ -76,7 +76,7 @@ function turnos(numAzar){
             }
             break;
     }
-    actualizarPosiciones()
+    actualizarPosiciones(0)
     ganaJugador()
     // sumo 1 para que vaya el siguiente jugador
     turnoJugador +=1;
