@@ -80,12 +80,35 @@ function turnos(numAzar){
     ganaJugador()
     // sumo 1 para que vaya el siguiente jugador
     turnoJugador +=1;
-    // si se sobre pasa a la cantidad de jugadores en juego, se resetea al primer jugador 
-    if (turnoJugador > cantidadJugadores){
-        turnoJugador = 1;
-    }
-    // voy a actualizar las posiciones pero de forma visual 
+         // si se sobre pasa a la cantidad de jugadores en juego, se resetea al primer jugador 
+         if (turnoJugador > cantidadJugadores){
+            turnoJugador = 1;
+        }
+    var siguienteJugador = "player"+turnoJugador
+    alert(siguienteJugador)
+
+
+     if (cantidadJugadores > 1) {
+         if (positionPlayers.penalidades[siguienteJugador]>0) {
+             while (positionPlayers.penalidades[siguienteJugador]>0) {
+             if (positionPlayers.penalidades[siguienteJugador]>0) {
+                 positionPlayers.penalidades[siguienteJugador]-=1
+                 turnoJugador +=1;
+                 siguienteJugador = "player"+turnoJugador
+                 if (turnoJugador > cantidadJugadores){
+                    turnoJugador = 1;
+                }
+             }
+             alert("sigue "+ turnoJugador)
+             }
+         
+         }
+     }
+     
+
 }
+
+
 // funcion que va  a ver cuantas vueltas tiene cada jugador, el que tenga igual a la cantidad de vueltas , gana
 function ganaJugador(){
     if (positionPlayers.vueltas.player1 == cantidadVueltas){

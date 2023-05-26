@@ -18,7 +18,26 @@ var avataresSeleccionados = {
 
 // seccion 1 de eleccion de cantidad de jugadores 
 function cantidadJugadoresPartida(numJugadores){
+    // limpio las imagenes de los otros jugadores dependiendo de cuantos vayan a jugar 
+    switch (numJugadores) {
+        case 1:
+            avataresSeleccionados.player2 = ""
+            avataresSeleccionados.player3=""
+            avataresSeleccionados.player4=""
 
+            break;
+        case 2:
+            avataresSeleccionados.player3=""
+            avataresSeleccionados.player4=""
+
+            break;
+        case 3:
+
+            avataresSeleccionados.player4=""
+        break;
+        default:
+            break;
+    } 
     // busco los botones de la cantidad de participantes y los reseteo 
     var btnJugadoresPartida = document.getElementsByClassName("btn_CantJugadores");
     // reseteo de botones
@@ -89,20 +108,16 @@ function seleccionAvatar(idSelect){
             avataresSeleccionados.player1 =imgAvatares[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player1
            // reseteo los que siguen
-            avataresSeleccionados.player2 = ""
-            avataresSeleccionados.player3=""
-            avataresSeleccionados.player4=""
+
             break;
         case 2:
             avataresSeleccionados.player2 = imgAvatares[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player2
-            avataresSeleccionados.player3=""
-            avataresSeleccionados.player4=""
+
             break;
         case 3:
             avataresSeleccionados.player3 = imgAvatares[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player3
-            avataresSeleccionados.player4=""
         break;
         case 4:
             avataresSeleccionados.player4 = imgAvatares[nameNumAvatar]

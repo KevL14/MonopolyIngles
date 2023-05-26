@@ -69,8 +69,9 @@ async function animarMovimiento() {
       verificarJugadoresMismaPosicion();
       imprimirJugadoresJuntos(); 
       imprimirJugadoresAnteriores();
-        await dalay(1500)
+      await dalay(1500)
       mostrarPregunta(player)
+
     }
 
   
@@ -83,15 +84,15 @@ function verificarJugadoresMismaPosicion() {
 function imprimirJugadoresJuntos() {
   var numCombinacionesPosibles = numeroJugadoresMismaPosicion.length - 1;
   var jugadoresJuntos = numeroJugadoresMismaPosicion[numCombinacionesPosibles];
+  if (jugadoresJuntos != undefined) {
+    if (jugadoresJuntos.length > 0) {
+      var imprimirJugadoresJuntos = "";
 
-  if (jugadoresJuntos.length > 0) {
-    var imprimirJugadoresJuntos = "";
-
-    for (let i = 0; i < jugadoresJuntos.length; i++) {
-      var player = jugadoresJuntos[i];
-      imprimirJugadoresJuntos += avataresSeleccionados[player];
-      document.getElementById("position" + positionPlayers[player]).innerHTML =
-        imprimirJugadoresJuntos;
+      for (let i = 0; i < jugadoresJuntos.length; i++) {
+        var player = jugadoresJuntos[i];
+        imprimirJugadoresJuntos += avataresSeleccionados[player];
+        document.getElementById("position" + positionPlayers[player]).innerHTML = imprimirJugadoresJuntos;
+      }
     }
   }
 }
@@ -135,6 +136,7 @@ function dalay(time) {
     setTimeout(resolve,time)
     )
 }
+// aparente error aqui al imprimir al jugador 
 // Llamar a la función para ejecutar el código
-actualizarPosiciones();
+// actualizarPosiciones();
 
