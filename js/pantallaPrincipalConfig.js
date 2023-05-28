@@ -1,7 +1,6 @@
 var cantidadJugadores = 1;
 var cantidadVueltas = 1;
 
-
 var avataresSeleccionados = {
     player1:"",
     player2:"",
@@ -21,19 +20,28 @@ function cantidadJugadoresPartida(numJugadores){
     // limpio las imagenes de los otros jugadores dependiendo de cuantos vayan a jugar 
     switch (numJugadores) {
         case 1:
-            avataresSeleccionados.player2 = ""
+            avataresSeleccionados.player2 =""
             avataresSeleccionados.player3=""
             avataresSeleccionados.player4=""
+
+            positionPlayers.nameTeams.player2=""
+            positionPlayers.nameTeams.player3=""
+            positionPlayers.nameTeams.player4=""
 
             break;
         case 2:
             avataresSeleccionados.player3=""
             avataresSeleccionados.player4=""
 
+            positionPlayers.nameTeams.player3=""
+            positionPlayers.nameTeams.player4=""
+
             break;
         case 3:
 
             avataresSeleccionados.player4=""
+            positionPlayers.nameTeams.player4=""
+
         break;
         default:
             break;
@@ -70,11 +78,23 @@ function cantidadJugadoresPartida(numJugadores){
     }
 }
 
-
+function validarNamesTeams() {
+    var nombresValidos;
+    for (let i = 1; i <= cantidadJugadores; i++) {
+        var tempNombreTeam = document.getElementById("inputNameTeam"+i)
+        var playerName="player"+i
+        if (tempNombreTeam.value.length > 3) {
+            positionPlayers.nameTeams[playerName]=tempNombreTeam.value
+            nombresValidos=true
+        }else{
+            return nombresValidos=false
+            break;
+        }
+    }
+    return nombresValidos
+}
 
 // inicializo por defecto los avatares 
-
-
 seleccionAvatar(1)
 // seccion 2 seleccion de avatares y nombre equipo 
 function seleccionAvatar(idSelect){

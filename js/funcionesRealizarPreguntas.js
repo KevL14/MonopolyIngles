@@ -82,6 +82,11 @@ function escogerPreguntaAzar(tipo){
     htmlButtonsRespuesta+=`<button id="${pregunta.answers[1]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[1]}')">${pregunta.answers[1]}</button>`
     htmlButtonsRespuesta+=`<button id="${pregunta.answers[2]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[2]}')">${pregunta.answers[2]}</button>`
     htmlButtonsRespuesta+=`<button id="${pregunta.answers[3]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[3]}')">${pregunta.answers[3]}</button>`
+    imgJugadorPreguntado.innerHTML=`
+        <h1>${playerPregunta}</h1>
+        ${avataresSeleccionados[playerPregunta]}
+        <p>${positionPlayers.nameTeams[playerPregunta]}</p>
+        <img id="continuarJuego_Pregunta" src="img/paginaPresentacion/flecha.png" onclick="mostrarPaginas(3,5)" alt="------>"/>`
     contentRespuestas.innerHTML = htmlButtonsRespuesta
     continuarJuego_Pregunta.style="display:none;"
 }

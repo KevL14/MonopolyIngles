@@ -24,6 +24,12 @@ var positionPlayers ={
         player3:0,
         player4:0,
 
+    },
+    nameTeams:{
+        player1:"",
+        player2:"",
+        player3:"",
+        player4:"",
     }
 }
 
@@ -101,11 +107,8 @@ function turnos(numAzar){
              }
              alert("sigue "+ turnoJugador)
              }
-         
          }
      }
-     
-
 }
 
 

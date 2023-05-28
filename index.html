@@ -21,10 +21,15 @@
     <img src="img/paginaPresentacion/flecha.png" onclick="mostrarPaginas(0,0)" id="salirMenu"alt="------>">
     <h1>SETTINGS</h1>
     <span>
-      <h2>Controles de Audio</h2>
-      <audio id="sonidoAmbiente" controls>
-        <source src="sound/sonidoAmbiente.mp3" type="audio/mpeg">
-      </audio>
+      <h2>Audio Controls</h2>
+      <span id="contentMusicaOptions">
+        <p>Music</p>
+        <label  class="switch">
+          <input class="toggle" id="switchSonidoAmbiente" onclick="activarSonido('ambiente')" type="checkbox">
+          <span class="slider"></span>
+          <span class="card-side"></span>
+        </label>
+      </span>
     </span>
 
     
@@ -60,7 +65,7 @@
 
           <span id="seleccionAvatar1" onClick="seleccionAvatar(1)"></span>
 
-          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
+          <input type="text" name="" id="inputNameTeam1" placeHolder="nameTeam">
         </span>
 
         <!-- perfil jugador 2 -->
@@ -69,7 +74,7 @@
 
           <span id="seleccionAvatar2" onClick="seleccionAvatar(2)"></span>
 
-          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
+          <input type="text" name="" id="inputNameTeam2" placeHolder="nameTeam">
         </span>
 
                 <!-- perfil jugador 3 -->
@@ -78,7 +83,7 @@
           <h1 class="numsPlayersTitle">Player 3</h1>
           <span id="seleccionAvatar3" onClick="seleccionAvatar(3)"></span>
 
-          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
+          <input type="text" name="" id="inputNameTeam3" placeHolder="nameTeam">
         </span>
 
                 <!-- perfil jugador 4 -->
@@ -88,7 +93,7 @@
 
           <span id="seleccionAvatar4" onClick="seleccionAvatar(4)"></span>
 
-          <input type="text" name="" id="inputNameTeams" placeHolder="nameTeam">
+          <input type="text" name="" id="inputNameTeam4" placeHolder="nameTeam">
         </span>
       </div>
 
@@ -103,7 +108,7 @@
           </select>
         </div>
         <!-- <button  ></button> -->
-        <button id="buttonPlayGame" onclick="mostrarPaginas(3)">
+        <button id="buttonPlayGame" onclick="mostrarPaginas(3,2)">
           <span class="circle1"></span>
           <span class="circle2"></span>
           <span class="circle3"></span>
@@ -127,7 +132,43 @@
 
 
   <section class="paginas ocultar" id="block3"><!-- tabla de juego por js --></section>
-  <section class="paginas ocultar" id="block4"></section>
+
+  <!-- pagina de ganadores -->
+  <section class ="paginas ocultar"id="block4">
+    <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="settingsButton" viewBox="0 0 16 16" onclick="mostrarPaginas(0,4)">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+    <h1>PODIUM!</h1>
+    <div>
+      <span>
+        <h2>2</h2>
+        <img src="img/personajes/Player1.png" alt="">
+        <h3>team name</h3>
+        <p>score</p>
+        
+      </span>
+      <span>
+
+        <h2>1</h2>
+        <img src="img/personajes/Player1.png" alt="">
+        <h3>team name</h3>
+        <p>score</p>
+        
+      </span>
+      <span>
+
+        <h2>3</h2>
+        <img src="img/personajes/Player1.png" alt="">
+        <h3>team name</h3>
+        <p>score</p>
+        
+      </span>
+    </div>
+    <div id="contenedorPlayAgain">
+      <p>PLAY AGAIN</p>
+      <img id="botonSiguientePartida_Fin" onclick="mostrarPaginas(1,4)" src="img/paginaPresentacion/flecha.png" alt="">
+    </div>
+  </section>
 
   <!-- paginas adicionales -->
   <section class="paginas ocultar" id="block5">
@@ -141,10 +182,7 @@
       </span>
       <span id="imgJugadorPreguntado">
         <!-- aqui se imprimira el icono y nombre del jugador que tiene que contestar -->
-        <h1>Player</h1>
-        <img src="img/personajes/Player1.png" alt="">
-        <p>team name</p>
-        <img id="continuarJuego_Pregunta" src="img/paginaPresentacion/flecha.png" onclick="mostrarPaginas(3,5)" alt="------>">
+        
       </span>
     </span>
   </section>
@@ -152,6 +190,10 @@
   <span class="ocultar" id="sonidos">
     <audio id="sonidoDado">
       <source src="sound/sonido-dado.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="sonidoAmbiente">
+      <source src="sound/sonidoAmbiente.mp3" type="audio/mpeg">
     </audio>
   </span>
 

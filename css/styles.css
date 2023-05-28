@@ -32,7 +32,7 @@ body{
 #block0{
   width: 100%;
   position: relative;
-  height: 40pc;
+  height: 43pc;
   padding-top: 20px;
   flex-direction: column;
   text-align: center;
@@ -53,6 +53,23 @@ body{
   border-radius: 11px;
   margin-bottom: 10px;
 }
+#block0 span #contentMusicaOptions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #cbe5ffcc;
+  width: 20%;
+  height: 75px;
+  border-radius: 11px;
+  margin: 0 auto;
+}
+#block0 span #contentMusicaOptions p{
+  color: rgb(0, 0, 0);
+  font-family: 'Staatliches', cursive;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
 #block0 #salirMenu{
   width: 100px;
   position: absolute;
@@ -67,7 +84,7 @@ body{
 /* estilo pantalla de presentacion */
 #block1{
   width: 100%;
-  height: 41.4pc;
+  height: 43pc;
   background-image: url(../img/fondoBlock0.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -132,7 +149,7 @@ body{
   align-items: center;
   background-color: #fff;
   width: 100%;
-  height: 39.5pc;
+  height:43pc;
   padding-top:30px ;
   background-image: url(../img/fondoBlock1.png);
   background-size: 100%;
@@ -283,18 +300,20 @@ color: #fff;
 
 /* estilos de tabla de juegos */
 #block3{
+  height: 43pc;
   background-color: #7EB1DB;
-  height: 40pc;
-  padding: .8%;
    background-image: url(../img/fondoTablero.png);
   background-repeat: no-repeat;
   background-size:85%;
+  background-position-y: 55px;
   background-position-x:-15px ;
 }
 #tableGame {
-    margin-top: 1pc;
+  display:flex ;
+  justify-content: center;
+  position: relative;
     border-collapse: collapse;
-    width: 98%;
+    width: 100%;
     margin: auto;
   }
   #dado {
@@ -302,96 +321,205 @@ color: #fff;
     height: 100px;
     cursor: pointer;
     font-size: 18px;
+    display: block;
   }
   #dado img{
     width: 80px;
   }
-  
+   #tableGame tr{
+    display: flex;
+  } 
   #tableGame td {
-    border: 1px solid #000;
+    height: 110px;
+    width: 110px;
     text-align: center;
     position: relative;
-    justify-content: center;
-    width: 100px;
-    height: 100px;
-    min-height: 100px;
-    border:none
-
+    border:none;
   }
+.settingsButton_TablePage{
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width:50px;
+  height:40px;
+}
 
 
-  #tableGame #position0{
-    background-repeat: no-repeat;
-    background-size: 55%;
-    background-position: 40px;
-  }
   /* posicion de fichas en casillas */
   #tableGame td .iconsPlayers{
     width: 50px;
+    margin: 0%;
     position: absolute;
   }
   #tableGame td #iconPlayer1{
     top: 5px;
-    left: 15px;
-
+    left: 5px;
   }
   #tableGame td #iconPlayer2{
-    top: 50px;
-    right: 15px;
-
+    top: 5px;
+    right: 5px;
+    
   }
   #tableGame td #iconPlayer3{
     bottom: 5px;
-    left: 15px;
+    left: 5px;
   }
   #tableGame td #iconPlayer4{
-    bottom: 50px;
-    right: 15px;
+    bottom: 5px;
+    right: 5px;
   }
 
   #tableGame .espaciosVacios{
-    border:none
+    border:none;
+    height: 0px;
   }
-  /* estilos casillas por su tipo  */
   .preguntasNormales,.preguntasBomba,.preguntasDificiles,.casillaFree,.casillaGo{
+    background-color: red;
     background-repeat: no-repeat;
     background-size: 85%;
     background-position-x: 8px;
     background-position-y: 0px;
   }
-  #tableGame  .casillasNormales{
+  
+  /* estilos casillas por su tipo */
+   #tableGame  .casillasNormales{
     background-color: #A5EEF4;
-  }
+  } 
   #tableGame .preguntasNormales{
-    background-color: #D2FCFF;
+    background-color: #D2FCFF; 
     background-image: url(../img/casillas/casilla\ trivia.png);
   }
   #tableGame .preguntasBomba{
-  background-color: #D2C7FF;
-  background-image: url(../img/casillas/casilla\ retos.png);
+    background-color: #D2C7FF;
+    background-image: url(../img/casillas/casilla\ retos.png);
   }
   #tableGame .preguntasDificiles{
     background-color: #FF849C;
     background-image: url(../img/casillas/casilla\ peligro.png);
   }
-
-  #tableGame #position0{
+  
+  #tableGame .casillaGo{
     background-color: #244C76;
     background-image: url(../img/casillas/casilla\ inicio.png);
+    background-repeat: no-repeat;
     background-size: 90%;
     background-position-x: 5px;
     background-position-y: 0px;
-
+    
   }
   #tableGame .casillaFree{
     background-color: #244C76;
+    
     background-image: url(../img/casillas/casilla\ free.png);
   }
-  
 
   /* pagina de ganadores */
-  /* block4 */
+  #block4{
+    height: 43pc;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7EB1DB;
+    background-image: url(../img/podio/fondo\ podio.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  #block4 h1{
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'Staatliches', cursive;
+    color: white;
+  }
+  #block4 div{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    width: 90%;
+    height: 50%;
+  }
+  #block4 div span{
+    height: 100%;
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
 
+  #block4 div span h2{
+    background-color: #244C76;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 20px;
+    font-family: 'DM Sans', sans-serif;
+    width: 50px;
+    padding: 1%;
+    font-weight: 800;
+    height: 50px;
+    border-radius: 50%;
+    top: 30px;
+    right: 10px;
+    border: none;
+    color: #fff;
+  }
+  #block4 div span:nth-child(2){
+    width: 25%;
+  }
+  #block4 div span:nth-child(2) h2{
+    top: 1px;
+    right: 1px;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+  }
+  #block4 div span img{
+    margin: 20px 0 10px 0;
+    width: 80%;
+  }
+  #block4 div span h3{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    color: white;
+  }
+  #block4 div span p{
+    text-align: center;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+
+  }
+  #block4 div:last-child{
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 5%;
+  }
+  #block4 div:last-child p{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Staatliches', cursive;
+    margin-right: 30px;
+    font-weight: 800;
+  }
+  #block4 div:last-child #botonSiguientePartida_Fin{
+    width: 100px;
+    cursor: pointer;
+    pointer-events: painted;
+    transform: rotate(180deg);
+    filter: invert(100%);
+
+  }
 
 
   /* pagina de preguntas  */
@@ -401,7 +529,7 @@ color: #fff;
   align-items: center;
 flex-direction: unset;
   width: 100%;
-  height: 41.4pc;
+  height: 43pc;
   background-image: url(../img/Tarjetas/fondo.png);
   background-size: 100%;
   background-repeat: no-repeat;
