@@ -96,6 +96,7 @@ async function evaluarRespuesta(respuesta) {
     buttonRespuestaCorrecta = document.getElementById(pregunta.correctAnswer)
     await dalay(500)
     if (respuesta != pregunta.correctAnswer) {
+        sonidoRespuestaIncorrecta.play()
      switch (tipoPregunta) {
         case 1:
             positionPlayers.penalidades[playerPregunta] +=1;
@@ -111,6 +112,7 @@ async function evaluarRespuesta(respuesta) {
      buttonRespuestaUser.style = "background-color: red; color:white;transform: scale(1.2);"
      buttonRespuestaCorrecta.style = "background-color: green;color:white;"
     }else{
+        sonidoRespuestaCorrecta.play()
         buttonRespuestaUser.style = "background-color: green;color:white;transform: scale(1.2);"      
     }
     var listButtonsRespuestas= document.getElementsByClassName("btn_Respuestas")
