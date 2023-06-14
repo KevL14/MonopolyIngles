@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Staatliches&display=swap" rel="stylesheet">
     <title>CATCH THE VERB!</title>
-
+    <!-- <script defer src="https://app.embed.im/snow.js"></script> -->
 </head>
 <body>
   <section class ="paginas ocultar" id="block0">
@@ -134,32 +134,32 @@
   <section class="paginas ocultar" id="block3"><!-- tabla de juego por js --></section>
 
   <!-- pagina de ganadores -->
-  <section class ="paginas ocultar"id="block4">
+  <section class ="paginas ocultar" id="block4">
     <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="settingsButton" viewBox="0 0 16 16" onclick="mostrarPaginas(0,4)">
       <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
     </svg>
     <h1>PODIUM!</h1>
     <div>
-      <span>
+      <span class="tarjetasPodium" id="tarjetaPodium2">
         <h2>2</h2>
-        <img src="img/personajes/Player1.png" alt="">
-        <h3>team name</h3>
+        <img id="imgTarjetaPodium2" src="" alt="">
+        <h3 id="nameTarjetaPodium2"></h3>
         <p>score</p>
         
       </span>
-      <span>
+      <span class="tarjetasPodium" id="tarjetaPodium1">
 
         <h2>1</h2>
-        <img src="img/personajes/Player1.png" alt="">
-        <h3>team name</h3>
+        <img id="imgTarjetaPodium1" src="" alt="">
+        <h3 id="nameTarjetaPodium1"></h3>
         <p>score</p>
         
       </span>
-      <span>
+      <span class="tarjetasPodium" id="tarjetaPodium3">
 
         <h2>3</h2>
-        <img src="img/personajes/Player1.png" alt="">
-        <h3>team name</h3>
+        <img id="imgTarjetaPodium3" src="" alt="">
+        <h3 id="nameTarjetaPodium3"></h3>
         <p>score</p>
         
       </span>
@@ -213,5 +213,6 @@
   <script src="js/sonidosControles.js"></script>
   <script src="js/preguntas.js"></script>
   <script src="js/funcionesRealizarPreguntas.js"></script>
+  <script src="js/funcionPodium.js"></script>
 </body>
 </html>

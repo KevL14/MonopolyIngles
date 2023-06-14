@@ -49,8 +49,8 @@ function mostrarPaginas(paginaActual,paginaAnterior){
         // 1 como parametro para que no actulicen nada de las pocisiones y por ende no vuelvan a hacer preguntas
         if(page ==3 && anteriorPage == 5){
             actualizarPosiciones(1)
-            }else if(page == 3){
-                actualizarPosiciones(0)
+        }else if(page == 3){
+            actualizarPosiciones(0)
         }
     }
 }

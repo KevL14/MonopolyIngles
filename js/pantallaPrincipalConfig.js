@@ -11,7 +11,13 @@ var avataresSeleccionados = {
         player2:1,
         player3:1,
         player4:1,
-    }
+    },
+    src:{
+        player1:"",
+        player2:"",
+        player3:"",
+        player4:"",
+    },
     
 }
 
@@ -20,25 +26,34 @@ function cantidadJugadoresPartida(numJugadores){
     // limpio las imagenes de los otros jugadores dependiendo de cuantos vayan a jugar 
     switch (numJugadores) {
         case 1:
-            avataresSeleccionados.player2 =""
+            avataresSeleccionados.player2=""
             avataresSeleccionados.player3=""
             avataresSeleccionados.player4=""
+
+            avataresSeleccionados.src.player2="";
+            avataresSeleccionados.src.player3="";
+            avataresSeleccionados.src.player4="";
 
             positionPlayers.nameTeams.player2=""
             positionPlayers.nameTeams.player3=""
             positionPlayers.nameTeams.player4=""
+
+            
 
             break;
         case 2:
             avataresSeleccionados.player3=""
             avataresSeleccionados.player4=""
 
+            avataresSeleccionados.src.player3="";
+            avataresSeleccionados.src.player4="";
+
             positionPlayers.nameTeams.player3=""
             positionPlayers.nameTeams.player4=""
 
             break;
         case 3:
-
+            avataresSeleccionados.src.player4="";
             avataresSeleccionados.player4=""
             positionPlayers.nameTeams.player4=""
 
@@ -118,6 +133,16 @@ function seleccionAvatar(idSelect){
         avatar6:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player6.png" alt="iconPlayer6">`,
         avatar7:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player7.png" alt="iconPlayer7">`,
         avatar8:`<img class="iconsPlayers" id="iconPlayer${idSelect}" src="img/personajes/Player8.png" alt="iconPlayer8">`,
+        src:{
+            avatar1:"img/personajes/Player1.png",
+            avatar2:"img/personajes/Player2.png",
+            avatar3:"img/personajes/Player3.png",
+            avatar4:"img/personajes/Player4.png",
+            avatar5:"img/personajes/Player5.png",
+            avatar6:"img/personajes/Player6.png",
+            avatar7:"img/personajes/Player7.png",
+            avatar8:"img/personajes/Player8.png"
+        },
       }
     // agarro el lugar donde imprimo la preimagen
     var imprimirAvatarElegido = document.getElementById(`seleccionAvatar${idSelect}`);
@@ -126,21 +151,23 @@ function seleccionAvatar(idSelect){
     switch (idSelect) {
         case 1:
             avataresSeleccionados.player1 =imgAvatares[nameNumAvatar]
+            avataresSeleccionados.src.player1=imgAvatares.src[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player1
-           // reseteo los que siguen
-
             break;
         case 2:
             avataresSeleccionados.player2 = imgAvatares[nameNumAvatar]
+            avataresSeleccionados.src.player2=imgAvatares.src[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player2
 
             break;
         case 3:
             avataresSeleccionados.player3 = imgAvatares[nameNumAvatar]
+            avataresSeleccionados.src.player3=imgAvatares.src[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player3
         break;
         case 4:
             avataresSeleccionados.player4 = imgAvatares[nameNumAvatar]
+            avataresSeleccionados.src.player4=imgAvatares.src[nameNumAvatar]
             imprimirAvatarElegido.innerHTML = avataresSeleccionados.player4
 
         break;

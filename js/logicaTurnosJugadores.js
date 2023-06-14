@@ -1,4 +1,5 @@
 var turnoJugador = 1;
+var ordenGanadores=[];
 var numDadoActual;
 
 // cantidad jugadores en documento pantallaPrincipalConfing.js 
@@ -81,9 +82,9 @@ function turnos(numAzar){
                 positionPlayers.vueltas.player4 += 1
             }
             break;
-    }
-    actualizarPosiciones(0)
-    ganaJugador()
+        }
+        actualizarPosiciones(0)
+        ganaJugador()
     // sumo 1 para que vaya el siguiente jugador
     turnoJugador +=1;
          // si se sobre pasa a la cantidad de jugadores en juego, se resetea al primer jugador 
@@ -115,18 +116,29 @@ function turnos(numAzar){
 // funcion que va  a ver cuantas vueltas tiene cada jugador, el que tenga igual a la cantidad de vueltas , gana
 function ganaJugador(){
     if (positionPlayers.vueltas.player1 == cantidadVueltas){
-        alert("Gana el jugador 1");
-        return true;
-        }else if (positionPlayers.vueltas.player2 == cantidadVueltas){
-            alert("Gana el jugador 2");
-            return true;
-            }else if (positionPlayers.vueltas.player3 == cantidadVueltas){
-                alert("Gana el jugador 3");
-                return true;
-                }else if (positionPlayers.vueltas.player4 == cantidadVueltas){
-                    alert("Gana el jugador 4");
-                    return true;
-                    }else{
-                        return false;
-                        }
-                        }
+        if (ordenGanadores.indexOf("player1")==-1) {
+            ordenGanadores.push("player1") 
+        }
+    }else if (positionPlayers.vueltas.player2 == cantidadVueltas){
+        if (ordenGanadores.indexOf("player2")==-1) {
+            ordenGanadores.push("player2")
+        }
+    }else if (positionPlayers.vueltas.player3 == cantidadVueltas){
+        if (ordenGanadores.indexOf("player3")==-1) {
+            ordenGanadores.push("player3")
+        }
+    }else if (positionPlayers.vueltas.player4 == cantidadVueltas){
+        if (ordenGanadores.indexOf("player4")==-1) {
+            ordenGanadores.push("player4")
+        }
+    }else{
+        
+    }
+    
+    // valoro si la cantidad de jugadores que ganaron son mayores a los que juegan
+
+    if (ordenGanadores.length ==cantidadJugadores) {
+        podium(ordenGanadores)
+        mostrarPaginas(4,3)
+    }
+}

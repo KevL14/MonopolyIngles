@@ -70,7 +70,7 @@ async function animarMovimiento() {
       imprimirJugadoresJuntos(); 
       imprimirJugadoresAnteriores();
       await dalay(1500)
-      mostrarPregunta(player)
+      // mostrarPregunta(player)
 
     }
 
