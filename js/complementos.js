@@ -40,13 +40,51 @@ var tablaDeJuego = `
       <tr>
         <td class="preguntasDificiles" id="position30"></td>
 
-        <td class="espaciosVacios">        
-        <span id="dado" onclick="lanzarDado()"></span>
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios"></td><!-- Celda vacía -->
+        <td class="espaciosVacios" id="centerTable">
+        
+        
+        <div id="contenedorInfoRondas">
+    <span id="titleRonda">
+      <h1 id="titleRonda_numeroRonda"></h1>
+    </span>
+    <div id="contenedorInfoRondas_Players">
+      <span id="infoRondas_Player1" class="infoRondas_Players">
+        <p id="infoNombre_Table_Player1">Lap: 1</p>
+
+        <img id="infoImg_Table_Player1" src="img/personajes/Player1.png" alt="">
+        <p id="infoVueltas_Table_Player1">Lap: 1</p>
+        <p id="infoPenalidad_Table_Player1">Penalidades: 1</p>
+        </span>
+      <span id="infoRondas_Player2" class="infoRondas_Players">
+        <p id="infoNombre_Table_Player2">Lap: 1</p>
+
+        <img id="infoImg_Table_Player2" src="img/personajes/Player1.png" alt="">
+        <p id="infoVueltas_Table_Player2">Lap: 1</p>
+        <p id="infoPenalidad_Table_Player2">Penalidades: 1</p>
+        </span>
+      <span id="infoRondas_Player3" class="infoRondas_Players">
+        <p id="infoNombre_Table_Player3">Lap: 1</p>
+
+        <img id="infoImg_Table_Player3" src="img/personajes/Player1.png" alt="">
+        <p id="infoVueltas_Table_Player3">Lap: 1</p>
+        <p id="infoPenalidad_Table_Player3">Penalidades: 1</p>
+        </span>
+      <span id="infoRondas_Player4" class="infoRondas_Players">
+        <p id="infoNombre_Table_Player4">Lap: 1</p>
+
+        <img id="infoImg_Table_Player4" src="img/personajes/Player1.png" alt="">
+        <p id="infoVueltas_Table_Player4">Lap: 1</p>
+        <p id="infoPenalidad_Table_Player4">Penalidades: 1</p>
+        </span>
+    </div>
+    <span id="dado" onclick="lanzarDado()"></span>
+  </div>
+        
         </td><!-- Celda vacía -->
-        <td class="espaciosVacios"></td><!-- Celda vacía -->
-        <td class="espaciosVacios"></td><!-- Celda vacía -->
-        <td class="espaciosVacios"></td><!-- Celda vacía -->
-        <td class="espaciosVacios"></td><!-- Celda vacía -->
         <td class="espaciosVacios"></td><!-- Celda vacía -->
         <td class="espaciosVacios"></td><!-- Celda vacía -->
         <td class="espaciosVacios"></td><!-- Celda vacía -->

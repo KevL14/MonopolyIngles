@@ -10,7 +10,7 @@ function mostrarPaginas(paginaActual,paginaAnterior){
         if (nombresValidados==true) {
             mostrarNuevaPagina(paginaActual,paginaAnterior)
         }else{
-            alert("Digite todos los nombres de los participantes")
+            alert("Los nombre de los participantes debe de ser (minimo) 4 caracteres")
         }
 
     }else{ 
@@ -18,7 +18,7 @@ function mostrarPaginas(paginaActual,paginaAnterior){
     }
 
 
-    function mostrarNuevaPagina(page,anteriorPage) {
+    async function mostrarNuevaPagina(page,anteriorPage) {
         if (page == 0 && anteriorPage == 0) {
             mostrarTipo = "mostrar_ModeFlex"
             idPaginaSelecionada=document.getElementById(`block${ultimaPagina}`) 
@@ -49,8 +49,12 @@ function mostrarPaginas(paginaActual,paginaAnterior){
         // 1 como parametro para que no actulicen nada de las pocisiones y por ende no vuelvan a hacer preguntas
         if(page ==3 && anteriorPage == 5){
             actualizarPosiciones(1)
+            await dalay(1500)
+                // aqui se actualiza unicamente las penalizaciones en pantalla de la tabla 
+            actualizarTurno()
         }else if(page == 3){
             actualizarPosiciones(0)
+            mostrarColor_Turno()
         }
     }
 }

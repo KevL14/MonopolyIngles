@@ -8,13 +8,13 @@ var carasDado ={
     cara6:'<img src="img/carasDado/cara6Fondo.png" alt="6"/>',
 }
 
-
+var numeroDado
 var numeroDadoActual;
 // la funcion que genera los numeros del dado
 function lanzarDado(){
     // reproduzco sonido del dado
     sonidoDado.play()
-    var numeroDado = Math.floor(Math.random() * 6) + 1;
+    numeroDado = Math.floor(Math.random() * 6) + 1;
     // modifico la posicion actual para actualizar el dado 
     numeroDadoActual = numeroDado
     // actualizo los turnos logicaTurnosJugadores.js 

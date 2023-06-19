@@ -29,11 +29,14 @@ function podium(listOrdenGanadores) {
             tarjetaPodium3.style.display="none"
             break;
     }
+
     for (let i = 1; i <= listOrdenGanadores.length; i++) {
         var subIndice= i-1
-        nameTarjeta= document.getElementById(`nameTarjetaPodium${i}`);
-        imgTarjeta= document.getElementById(`imgTarjetaPodium${i}`)
-        imgTarjeta.src=avataresSeleccionados.src[listOrdenGanadores[subIndice]]
-        nameTarjeta.innerHTML=positionPlayers.nameTeams[listOrdenGanadores[subIndice]]
+        if (i!=4){
+            nameTarjeta= document.getElementById(`nameTarjetaPodium${i}`);
+            imgTarjeta= document.getElementById(`imgTarjetaPodium${i}`)
+            imgTarjeta.src=avataresSeleccionados.src[listOrdenGanadores[subIndice]]
+            nameTarjeta.innerHTML=positionPlayers.nameTeams[listOrdenGanadores[subIndice]]
+    }
     }
 }

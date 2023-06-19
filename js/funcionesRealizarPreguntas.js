@@ -1,3 +1,4 @@
+// var casillasNormales=[0,2,8,12,15,16,18,21,26]
 var casillasPreguntasNormales=[1,3,5,7,9,11,14,17,20,23,25,27,29]
 var casillasPreguntasBomba=[6,13,19,24,31]
 var casillasPreguntasDificiles=[4,10,22,28,30]
@@ -16,7 +17,7 @@ var textTarjeta = document.getElementById("textPregunta")
 var contentRespuestas = document.getElementById("contenedorRespuestas")
 
 
-function mostrarPregunta(jugador) {
+async function mostrarPregunta(jugador) {
     var hacerPreguntaNormal=false;
     var hacerPreguntaBomba=false;
     var hacerPreguntaDificil=false;
@@ -53,6 +54,8 @@ function mostrarPregunta(jugador) {
         imgTarjetaType=imgTarjetasPreguntas.preguntaDificil
         escogerPreguntaAzar(3)
         mostrarPaginas(5,3)
+    }else{
+        actualizarTurno()
     }
 
 }
@@ -72,16 +75,32 @@ function escogerPreguntaAzar(tipo){
             numPregunta = Math.floor(Math.random() * difficultQuestions.length)
             pregunta = difficultQuestions[numPregunta]
             break;
-            
         default:
             break;
     }
     imgTarjeta.innerHTML = imgTarjetaType + `<span id="textPregunta">${pregunta.question}</span>`
     var htmlButtonsRespuesta = "";
-    htmlButtonsRespuesta+=`<button id="${pregunta.answers[0]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[0]}')">${pregunta.answers[0]}</button>`
-    htmlButtonsRespuesta+=`<button id="${pregunta.answers[1]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[1]}')">${pregunta.answers[1]}</button>`
-    htmlButtonsRespuesta+=`<button id="${pregunta.answers[2]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[2]}')">${pregunta.answers[2]}</button>`
-    htmlButtonsRespuesta+=`<button id="${pregunta.answers[3]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[3]}')">${pregunta.answers[3]}</button>`
+    var combinacionesOrdenPreguntas=[];
+
+    while (combinacionesOrdenPreguntas.length<4) {
+        var numCombinacion = Math.floor(Math.random() * 4) + 1;
+        console.log("numero de combinacion"+numCombinacion)
+        console.log("lista con combinaciones"+combinacionesOrdenPreguntas)
+        console.log("ver si esta "+numCombinacion+" en la lista "+combinacionesOrdenPreguntas.indexOf(numCombinacion))
+        if(numCombinacion==4){
+            numCombinacion=0;
+        }
+        if (combinacionesOrdenPreguntas.indexOf(numCombinacion)==-1) {
+            combinacionesOrdenPreguntas.push(numCombinacion);
+        }
+    }
+    for (let i = 0; i < combinacionesOrdenPreguntas.length; i++) {
+        htmlButtonsRespuesta+=`<button id="${pregunta.answers[combinacionesOrdenPreguntas[i]]}" class="btn_Respuestas" onclick="evaluarRespuesta('${pregunta.answers[combinacionesOrdenPreguntas[i]]}')">${pregunta.answers[combinacionesOrdenPreguntas[i]]}</button>`      
+    }
+    console.log(htmlButtonsRespuesta)
+    console.log(combinacionesOrdenPreguntas)
+
+
     imgJugadorPreguntado.innerHTML=`
         <h1>${playerPregunta}</h1>
         ${avataresSeleccionados[playerPregunta]}
@@ -120,6 +139,11 @@ async function evaluarRespuesta(respuesta) {
         listButtonsRespuestas[i].disabled=true;
     }
     continuarJuego_Pregunta.style="display:block;"
+
+
+
+   
+
 }
 
 
