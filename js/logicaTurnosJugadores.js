@@ -101,6 +101,9 @@ async function actualizarTurno() {
         mostrarColor_Turno();
         await dalay(1000);
         positionPlayers.penalidades[siguienteJugador] -= 1;
+        if(ordenGanadores.indexOf(siguienteJugador)!=-1){
+           positionPlayers.penalidades[siguienteJugador] += 1
+        }
         turnoJugadorAnterior = turnoJugador;
         turnoJugador += 1;
         siguienteJugador = "player" + turnoJugador;
