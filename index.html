@@ -29,6 +29,13 @@
           <span class="slider"></span>
           <span class="card-side"></span>
         </label>
+
+        <p>Sound Effects</p>
+        <label  class="switch">
+          <input class="toggle" id="switchSonidoEfectos" onclick="activarSonido('efectos')" type="checkbox" checked>
+          <span class="slider"></span>
+          <span class="card-side"></span>
+        </label>
       </span>
     </span>
 
@@ -144,7 +151,7 @@
         <h2>2</h2>
         <img id="imgTarjetaPodium2" src="" alt="">
         <h3 id="nameTarjetaPodium2"></h3>
-        <p>score</p>
+        <p>second</p>
         
       </span>
       <span class="tarjetasPodium" id="tarjetaPodium1">
@@ -152,7 +159,7 @@
         <h2>1</h2>
         <img id="imgTarjetaPodium1" src="" alt="">
         <h3 id="nameTarjetaPodium1"></h3>
-        <p>score</p>
+        <p>first</p>
         
       </span>
       <span class="tarjetasPodium" id="tarjetaPodium3">
@@ -160,7 +167,7 @@
         <h2>3</h2>
         <img id="imgTarjetaPodium3" src="" alt="">
         <h3 id="nameTarjetaPodium3"></h3>
-        <p>score</p>
+        <p>third</p>
         
       </span>
     </div>
@@ -202,6 +209,10 @@
     <audio id="sonidoRespuestaIncorrecta">
       <source src="sound/sonidoRespuestaIncorrecta.mp3" type="audio/mpeg">
     </audio>
+
+    <audio id="sonidoTurnoJugador">
+      <source src="sound/sonidoTurnoJugador.mp3" type="audio/mpeg">
+    </audio>
   </span>
 
   
@@ -216,5 +227,6 @@
   <script src="js/preguntas.js"></script>
   <script src="js/funcionesRealizarPreguntas.js"></script>
   <script src="js/funcionPodium.js"></script>
+  <script src="js/resetGame.js"></script>
 </body>
 </html>

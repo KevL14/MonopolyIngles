@@ -50,6 +50,8 @@ var tablaDeJuego = `
         <div id="contenedorInfoRondas">
     <span id="titleRonda">
       <h1 id="titleRonda_numeroRonda"></h1>
+      <h1 id="titleLaps_numeroLaps"></h1>
+
     </span>
     <div id="contenedorInfoRondas_Players">
       <span id="infoRondas_Player1" class="infoRondas_Players">
@@ -81,7 +83,7 @@ var tablaDeJuego = `
         <p id="infoPenalidad_Table_Player4">Penalidades: 1</p>
         </span>
     </div>
-    <span id="dado" onclick="lanzarDado()"></span>
+    <button id="dado" onclick="lanzarDado()"></button>
   </div>
         
         </td><!-- Celda vacía -->

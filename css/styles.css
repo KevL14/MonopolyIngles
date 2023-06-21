@@ -47,6 +47,7 @@ body{
   color: white;
   font-family: 'Staatliches', cursive;
   width: 50%;
+  font-size: 30px;
   margin: 0 auto;
   background-color: #244C76;
   padding:1%;
@@ -59,12 +60,13 @@ body{
   align-items: center;
   background-color: #cbe5ffcc;
   width: 20%;
-  height: 75px;
+  height: 200px;
   border-radius: 11px;
   margin: 0 auto;
 }
 #block0 span #contentMusicaOptions p{
   color: rgb(0, 0, 0);
+  margin-top: 20px;
   font-family: 'Staatliches', cursive;
   font-size: 30px;
   margin-bottom: 10px;
@@ -321,6 +323,8 @@ color: #fff;
     height: 100px;
     cursor: pointer;
     font-size: 18px;
+    border: none;
+    background: transparent;
     display: block;
   }
   #dado img{
@@ -431,6 +435,9 @@ color: #fff;
 }
 #contenedorInfoRondas #titleRonda{
   color: white;
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
   font-weight: 800;
   font-family: 'Staatliches', cursive;
   font-size: 40px;

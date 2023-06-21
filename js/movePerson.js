@@ -1,13 +1,14 @@
 var numeroJugadoresMismaPosicion = [];
 var jugadoresjuntosAnteriores = "";
 var player;
+var primeraRonda=true
 var rutaPregunta;
 
 function actualizarPosiciones(ruta) {
   rutaPregunta = ruta;
   if (ruta == 0){
     limpiarTablero();
-    animarMovimiento();
+    animarMovimiento()
   }
   
   // verificarJugadoresMismaPosicion();
@@ -20,6 +21,7 @@ function limpiarTablero() {
   actualizarImgDado();
   informacionRondaJugadores(0)
   document.getElementById("titleRonda_numeroRonda").innerHTML=`Round ${rondaActual}`
+  document.getElementById("titleLaps_numeroLaps").innerHTML=`Laps:${cantidadVueltas}`
   mostrarColor_Turno()
 
 }
@@ -27,7 +29,7 @@ function limpiarTablero() {
 // Función para animar el movimiento de los jugadores
 async function animarMovimiento() {
   var turnoplayer = turnoJugador
-  var player="player"+turnoplayer
+   player="player"+turnoplayer
     var posicionActual = positionPlayers.posicionAnterior[player];
     var posicionNueva =positionPlayers[player]; // Función que obtiene la nueva posición asignada al jugador
     // verifico si la posicion del jugador ya supero la vuelta y modifico sus numeros segun la vuelta
@@ -37,6 +39,7 @@ async function animarMovimiento() {
       positionPlayers.vueltas[player] += 1
     }
     while (posicionActual<posicionNueva){
+      document.getElementById('dado').disabled = true;
       // Realizar animación de movimiento
         document.getElementById("position" + positionPlayers.posicionAnterior[player]).innerHTML=avataresSeleccionados[player];
          // Actualizar posición nueva
@@ -104,13 +107,12 @@ async function animarMovimiento() {
       imprimirJugadoresJuntos(); 
       imprimirJugadoresAnteriores();
       await dalay(1500)
-      mostrarPregunta(player);
-
+      if (primeraRonda==false) {
+        mostrarPregunta(player);
+      }
+      primeraRonda=false
       
-
 }
-
-  
 
 //verificarJugadoresMismaPosicion: Verifica si hay jugadores en las mismas posiciones y actualiza la variable numeroJugadoresMismaPosicion.
 function verificarJugadoresMismaPosicion() {
@@ -166,8 +168,6 @@ function obtenerClavesValoresIguales(objeto) {
 
   return Object.values(clavesValoresIguales);
 }
-
-
 
 // sistema de informacion del tablero
 function informacionRondaJugadores(status) {
